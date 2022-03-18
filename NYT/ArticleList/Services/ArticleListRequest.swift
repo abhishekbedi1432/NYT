@@ -19,7 +19,7 @@ class ArticleListRequest: NetworkRequest {
     var urlRequest: URLRequest {
         
         var params:[String: AnyObject] = [:]
-        params["api-key"] = Constants.apiKey as AnyObject
+        params["api-key"] = NetworkConstants.apiKey as AnyObject
         
         return URLRequest(baseURL: URL(string: baseUrl)!,
                           path: "v2/mostviewed/all-sections/1.json",

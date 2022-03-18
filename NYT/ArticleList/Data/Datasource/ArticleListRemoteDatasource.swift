@@ -16,7 +16,7 @@ class ArticleListRemoteDatasource: ArticleListRemoteDatasourceContract {
     var baseUrl: String
     var networkManager: NetworkContract
     
-    init(baseUrl: String = Constants.host,
+    init(baseUrl: String = NetworkConstants.host,
          networkManager: NetworkContract = URLSession.shared) {
         self.baseUrl = baseUrl
         self.networkManager = networkManager

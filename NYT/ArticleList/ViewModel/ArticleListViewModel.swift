@@ -30,13 +30,13 @@ class ArticleListViewModel: ArticleListContract {
     }
     
     init(networkManager: NetworkContract = URLSession.shared) {
-        
+       
 //        self.articlesRepository = articlesRepository
         self.networkManager = networkManager
     }
 
     func fetchArticles() {
-        let request = ArticleListRequest(baseUrl: Constants.host)
+        let request = ArticleListRequest(baseUrl: NetworkConstants.host)
         networkManager.sendRequest(request: request, completion: onCompletion)
         
         

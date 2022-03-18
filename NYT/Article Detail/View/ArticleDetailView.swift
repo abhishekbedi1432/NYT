@@ -7,16 +7,9 @@
 
 import SwiftUI
 
-protocol ArticleDetailContract {
-    var imageUrl: URL? { get }
-    var headline: String { get }
-    var author: String { get }
-    var content: String { get }
-}
-
 struct ArticleDetailView: View {
-    //TODO: - Need to use contract here
-    var viewModel: ArticleDetailContract!
+
+    var viewModel: ArticleDetailPresentable!
 
     var body: some View {
 
@@ -35,6 +28,6 @@ struct ArticleDetailView_Previews: PreviewProvider {
     static var previews: some View {
         let url = URL(string: "https://static01.nyt.com/images/2022/03/09/world/09cli-shackleton-handout2/09cli-shackleton-handout2-mediumThreeByTwo440.jpg")
         ArticleDetailView(viewModel: ArticleDetailViewModel(imageUrl: url,
-            headline: "Headline", author: "Author", content: "Abstract"))
+                                                            headline: "Headline", date: "2022-03-18", author: "Author", content: "Abstract"))
     }
 }

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3B53B99927E3BD3A003F2A6E /* NYTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53B99827E3BD3A003F2A6E /* NYTApp.swift */; };
-		3B53B99B27E3BD3A003F2A6E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53B99A27E3BD3A003F2A6E /* ContentView.swift */; };
 		3B53B99D27E3BD3D003F2A6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B53B99C27E3BD3D003F2A6E /* Assets.xcassets */; };
 		3B53B9A027E3BD3D003F2A6E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B53B99F27E3BD3D003F2A6E /* Preview Assets.xcassets */; };
 		3B53B9AA27E3BD3D003F2A6E /* NYTTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53B9A927E3BD3D003F2A6E /* NYTTests.swift */; };
@@ -16,8 +15,7 @@
 		3B53B9B627E3BD3D003F2A6E /* NYTUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53B9B527E3BD3D003F2A6E /* NYTUITestsLaunchTests.swift */; };
 		3B53B9C727E3C044003F2A6E /* ArticleListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53B9C627E3C044003F2A6E /* ArticleListResponse.swift */; };
 		3B53B9C927E3C09B003F2A6E /* ArticleListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53B9C827E3C09B003F2A6E /* ArticleListViewModel.swift */; };
-		3B53B9D227E3CA8D003F2A6E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53B9D127E3CA8D003F2A6E /* Constants.swift */; };
-		3B53B9E027E3D767003F2A6E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53B9DF27E3D767003F2A6E /* NetworkManager.swift */; };
+		3B53B9E027E3D767003F2A6E /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53B9DF27E3D767003F2A6E /* NetworkError.swift */; };
 		3B53B9E227E3D78D003F2A6E /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53B9E127E3D78D003F2A6E /* NetworkRequest.swift */; };
 		3B53B9E427E3D7B8003F2A6E /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53B9E327E3D7B8003F2A6E /* NetworkConstants.swift */; };
 		3B53B9E627E3D7D4003F2A6E /* URLRequest+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53B9E527E3D7D4003F2A6E /* URLRequest+Convenience.swift */; };
@@ -37,6 +35,9 @@
 		3B53BA0E27E48CB3003F2A6E /* ArticleListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53BA0D27E48CB3003F2A6E /* ArticleListTests.swift */; };
 		3B53BA1527E49189003F2A6E /* nyt_popular_response.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B53BA1427E49189003F2A6E /* nyt_popular_response.json */; };
 		3B53BA1727E4A323003F2A6E /* nyt_error_response.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B53BA1627E4A323003F2A6E /* nyt_error_response.json */; };
+		3B53BA1927E4E5AF003F2A6E /* ArticleListPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53BA1827E4E5AF003F2A6E /* ArticleListPresentable.swift */; };
+		3B53BA1B27E4E90E003F2A6E /* Article+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53BA1A27E4E90E003F2A6E /* Article+Extension.swift */; };
+		3B53BA1D27E4EEC3003F2A6E /* NetworkContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53BA1C27E4EEC3003F2A6E /* NetworkContract.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +60,6 @@
 /* Begin PBXFileReference section */
 		3B53B99527E3BD3A003F2A6E /* NYT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B53B99827E3BD3A003F2A6E /* NYTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTApp.swift; sourceTree = "<group>"; };
-		3B53B99A27E3BD3A003F2A6E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3B53B99C27E3BD3D003F2A6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B53B99F27E3BD3D003F2A6E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3B53B9A527E3BD3D003F2A6E /* NYTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NYTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,8 +69,7 @@
 		3B53B9B527E3BD3D003F2A6E /* NYTUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3B53B9C627E3C044003F2A6E /* ArticleListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListResponse.swift; sourceTree = "<group>"; };
 		3B53B9C827E3C09B003F2A6E /* ArticleListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListViewModel.swift; sourceTree = "<group>"; };
-		3B53B9D127E3CA8D003F2A6E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		3B53B9DF27E3D767003F2A6E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		3B53B9DF27E3D767003F2A6E /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		3B53B9E127E3D78D003F2A6E /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		3B53B9E327E3D7B8003F2A6E /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 		3B53B9E527E3D7D4003F2A6E /* URLRequest+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Convenience.swift"; sourceTree = "<group>"; };
@@ -89,6 +88,9 @@
 		3B53BA0D27E48CB3003F2A6E /* ArticleListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListTests.swift; sourceTree = "<group>"; };
 		3B53BA1427E49189003F2A6E /* nyt_popular_response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = nyt_popular_response.json; sourceTree = "<group>"; };
 		3B53BA1627E4A323003F2A6E /* nyt_error_response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = nyt_error_response.json; sourceTree = "<group>"; };
+		3B53BA1827E4E5AF003F2A6E /* ArticleListPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListPresentable.swift; sourceTree = "<group>"; };
+		3B53BA1A27E4E90E003F2A6E /* Article+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Article+Extension.swift"; sourceTree = "<group>"; };
+		3B53BA1C27E4EEC3003F2A6E /* NetworkContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkContract.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,7 +147,6 @@
 				3B53B9C227E3BDAF003F2A6E /* ArticleList */,
 				3B53BA0227E47359003F2A6E /* Article Detail */,
 				3B53B99827E3BD3A003F2A6E /* NYTApp.swift */,
-				3B53B99A27E3BD3A003F2A6E /* ContentView.swift */,
 				3B53B99C27E3BD3D003F2A6E /* Assets.xcassets */,
 				3B53B99E27E3BD3D003F2A6E /* Preview Content */,
 			);
@@ -195,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				3B53B9C627E3C044003F2A6E /* ArticleListResponse.swift */,
+				3B53BA1A27E4E90E003F2A6E /* Article+Extension.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -210,6 +212,7 @@
 		3B53B9C527E3BE06003F2A6E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3B53BA1827E4E5AF003F2A6E /* ArticleListPresentable.swift */,
 				3B53B9F527E454E9003F2A6E /* ArticleListView.swift */,
 				3B53B9F927E45693003F2A6E /* ArticleListCell.swift */,
 				3B53B9FD27E466C8003F2A6E /* AsyncImageView.swift */,
@@ -220,7 +223,8 @@
 		3B53B9CA27E3C32B003F2A6E /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				3B53B9DF27E3D767003F2A6E /* NetworkManager.swift */,
+				3B53B9DF27E3D767003F2A6E /* NetworkError.swift */,
+				3B53BA1C27E4EEC3003F2A6E /* NetworkContract.swift */,
 				3B53B9E127E3D78D003F2A6E /* NetworkRequest.swift */,
 				3B53B9E327E3D7B8003F2A6E /* NetworkConstants.swift */,
 				3B53B9E527E3D7D4003F2A6E /* URLRequest+Convenience.swift */,
@@ -231,7 +235,6 @@
 		3B53B9D027E3CA80003F2A6E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				3B53B9D127E3CA8D003F2A6E /* Constants.swift */,
 				3B53B9F727E45609003F2A6E /* ViewDidLoadModifier.swift */,
 			);
 			path = Helpers;
@@ -467,15 +470,16 @@
 				3B53B9F627E454E9003F2A6E /* ArticleListView.swift in Sources */,
 				3B53B9E227E3D78D003F2A6E /* NetworkRequest.swift in Sources */,
 				3B53B9FE27E466C8003F2A6E /* AsyncImageView.swift in Sources */,
-				3B53B9E027E3D767003F2A6E /* NetworkManager.swift in Sources */,
-				3B53B99B27E3BD3A003F2A6E /* ContentView.swift in Sources */,
+				3B53B9E027E3D767003F2A6E /* NetworkError.swift in Sources */,
 				3B53B9E927E3D8B5003F2A6E /* ArticleListRequest.swift in Sources */,
 				3B53B9E627E3D7D4003F2A6E /* URLRequest+Convenience.swift in Sources */,
+				3B53BA1927E4E5AF003F2A6E /* ArticleListPresentable.swift in Sources */,
 				3B53B9F027E3E083003F2A6E /* ArticleListLocalDatasource.swift in Sources */,
 				3B53B9FC27E45D27003F2A6E /* ArticleDetailView.swift in Sources */,
 				3B53B9C927E3C09B003F2A6E /* ArticleListViewModel.swift in Sources */,
-				3B53B9D227E3CA8D003F2A6E /* Constants.swift in Sources */,
+				3B53BA1D27E4EEC3003F2A6E /* NetworkContract.swift in Sources */,
 				3B53B9F227E3E0CE003F2A6E /* ArticleListRemoteDatasource.swift in Sources */,
+				3B53BA1B27E4E90E003F2A6E /* Article+Extension.swift in Sources */,
 				3B53B9ED27E3DF76003F2A6E /* ArticleListRepository.swift in Sources */,
 				3B53B9C727E3C044003F2A6E /* ArticleListResponse.swift in Sources */,
 				3B53B99927E3BD3A003F2A6E /* NYTApp.swift in Sources */,

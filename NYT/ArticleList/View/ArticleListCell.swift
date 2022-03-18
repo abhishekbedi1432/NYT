@@ -8,31 +8,38 @@
 import SwiftUI
 import Kingfisher
 
-protocol ArticlePresentable {
-    
-}
-
-
 struct ArticleListCell: View {
-    var article: Article
+    var article: ArticleListPresentable
     
+    // MARK: Constants
     struct Constants {
         static let imageWidth: CGFloat = 100
-        static let imageHeight: CGFloat = 80
+        static let imageHeight: CGFloat = 100
+        static let padding: CGFloat = 8
+        static let spacing: CGFloat = 12
     }
 
-
     var body: some View {
-        HStack(alignment: .top, spacing: 10) {
-            KFImage(article.imageUrlBig).resizable().aspectRatio(contentMode: .fit)
+        HStack(alignment: .top, spacing: Constants.spacing) {
+           
+            // MARK: ImageView
+            KFImage(article.imageUrl).resizable().aspectRatio(contentMode: .fit)
                 .frame(maxWidth:Constants.imageWidth, maxHeight: Constants.imageHeight, alignment: .leading)
-            VStack(alignment: .leading, spacing: 8, content: {
+            
+            // MARK: Title / Subtitle
+            VStack(alignment: .leading, spacing: Constants.spacing, content: {
                 
-                Text(article.title ?? "").font(.caption).foregroundColor(.gray)
-                Text(article.publishedDate ?? "").font(.subheadline)
+                Text(article.headline).font(.caption)
+                Text(article.author).font(.caption2).foregroundColor(.gray)
+                HStack(alignment: .center, spacing: Constants.spacing) {
+//                    Text(article.author).font(.caption2).foregroundColor(.gray)
+                    Image(systemName: "calendar.circle.fill")
+                    Text(article.date).font(.caption2).foregroundColor(.gray)
+                }
+                
             })
         }
-        .padding(10)
+        .padding(Constants.padding)
     }
 }
 

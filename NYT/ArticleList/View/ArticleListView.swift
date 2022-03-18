@@ -9,6 +9,9 @@ import SwiftUI
 
 struct ArticleListView<ViewModel>: View where ViewModel: ArticleListContract {
 
+    // MARK: Constants
+    private let screenTitle = "Most Popular Articles"
+    
     // MARK: Properties
     @ObservedObject private(set) var viewModel: ViewModel
 
@@ -23,15 +26,16 @@ struct ArticleListView<ViewModel>: View where ViewModel: ArticleListContract {
             }.onLoad {
                 viewModel.fetchArticles()
             }
-            .navigationTitle(Text("Most Popular Articles"))
+            .navigationTitle(Text(screenTitle))
         }
         .navigationViewStyle(.stack)
     }
 }
 
+// MARK: Article Details
 private extension ArticleListView {
     
-    func articleDetailsView(for article: ArticleDetailContract) -> ArticleDetailView {
+    func articleDetailsView(for article: Article) -> ArticleDetailView {
         ArticleDetailView(viewModel: article)
     }
 }
