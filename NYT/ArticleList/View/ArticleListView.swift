@@ -32,7 +32,7 @@ struct ArticleListView<ViewModel>: View where ViewModel: ArticleListContract {
             .listRowBackground(Color.clear)
             .listStyle(GroupedListStyle())
             .navigationBarItems(trailing:
-                                    Button(action: {self.showModal = true}) {
+                                    Button(action: { self.showModal = true }) {
                 HStack(){
                     Text(selectedPeriodRange.value)
                     Image(systemName: "line.3.horizontal.decrease.circle")

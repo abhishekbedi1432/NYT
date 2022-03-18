@@ -16,12 +16,18 @@ extension URLSession: NetworkContract {
     func processRequest<T: Codable>(request: NetworkRequest, type: T.Type, completion: @escaping(Swift.Result<T, Error>) -> Void) {
         
         dataTask(with: request.urlRequest) { data, response, error in
+            
+            guard let data = data else {
+                completion(Result.failure(NetworkError.invalidData))
+                return
+            }
+            
             if let error = error {
                 completion(Result.failure(NetworkError.serverError(error)))
                 return
             }
             do{
-                let response = try JSONDecoder().decode(T.self, from: data!)
+                let response = try JSONDecoder().decode(T.self, from: data)
                 completion(Result.success(response))
                 
             }
