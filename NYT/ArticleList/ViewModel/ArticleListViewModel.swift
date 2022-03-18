@@ -30,16 +30,44 @@ class ArticleListViewModel: ArticleListContract {
     }
 
     func fetchArticles() {
+        let request = ArticleListRequest(baseUrl: Constants.host)
+        networkManager.sendRequest(request: request, completion: onCompletion)
         
-        articlesRepository?.fetchArticles { [weak self] result in
-            switch result {
-                case .success(let articles):
-                    DispatchQueue.main.async { [weak self] in
-                        self?.articles = articles
-                    }
-                case .failure(let error):
-                    print(error)
-            }
+        
+//        networkManager.sendRequest(request: request) { [weak self] result in
+//            switch result {
+//                case .success(let articles):
+//                    DispatchQueue.main.async { [weak self] in
+//                        self?.articles = articles
+//                    }
+//                case .failure(let error):
+//                    print(error)
+//            }
+//
+//        }
+        
+//        articlesRepository?.fetchArticles { [weak self] result in
+//            switch result {
+//                case .success(let articles):
+//                    DispatchQueue.main.async { [weak self] in
+//                        self?.articles = articles
+//                    }
+//                case .failure(let error):
+//                    print(error)
+//            }
+//        }
+    }
+    
+    
+    private func onCompletion(result: Result<ArticleListResponse, Error>) {
+        
+        switch result {
+            case .success(let articles):
+                DispatchQueue.main.async { [weak self] in
+                    self?.articles = articles.articles ?? []
+                }
+            case .failure(let error):
+                print(error)
         }
     }
 }

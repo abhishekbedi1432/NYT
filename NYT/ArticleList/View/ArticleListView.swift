@@ -15,38 +15,41 @@ struct ArticleListView<ViewModel>: View where ViewModel : ArticleListContract {
     var body: some View {
         NavigationView {
             ScrollView {
-                
-                // MARK: GRID
+
                 ForEach(viewModel.articles) { article in
                     NavigationLink(destination: articleDetailsView(for: article)) {
-                        
-                        // MARK: ItemView
                         ArticleListCell(article: article)
-                        
-//                        (product: product,
-//                                        isInWishList: viewModel.isProductInWishList(product: product),
-//                                        onWishListTap: { product in
-//                            viewModel.handleWishListTapFor(product: product)
-//                        })
                     }
                 }
-                
             }
             .onLoad {
                 viewModel.fetchArticles()
             }
             .navigationTitle("Most popular")
             .navigationBarTitleDisplayMode(.inline)
-            
         }
     }
+    
+//    var body: some View {
+//        List {
+//            ForEach(viewModel.articles, id:\.self) { article in
+//                NavigationLink(destination: articleDetailsView(for: article)) {
+//                    ArticleListCell(article: article)
+//                }
+//            }
+//        }.onLoad {
+//            viewModel.fetchArticles()
+//        }
+//        //        .onAppear(perform: onRefreshButtonClicked)
+//        .navigationBarTitle("Today's Feeds", displayMode: .inline)
+//    }
+//
 }
 
 private extension ArticleListView {
-    func articleDetailsView(for article: Article) -> ArticleDetailView {
-        return ArticleDetailView()
-//        let productDetailsViewModel = ProductDetailsViewModel(product: product, cart: cart, wishList: wishList)
-//        return ProductDetailsView(viewModel: productDetailsViewModel)
+    
+    func articleDetailsView(for article: ArticleDetailContract) -> ArticleDetailView {
+        ArticleDetailView(viewModel: article)
     }
 }
 

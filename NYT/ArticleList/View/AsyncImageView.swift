@@ -1,0 +1,43 @@
+//
+//  AsyncImageView.swift
+//  NYT
+//
+//  Created by kbedi on 18/03/2022.
+//
+
+import SwiftUI
+
+struct AsyncImageView: View {
+    
+    // MARK: Properties
+    var imageUrl: URL?
+    @State private var frame: CGSize = .zero
+    
+    var body: some View {
+        //GeometryReader { (geometry) in
+        AsyncImage(url: imageUrl) { phase in
+            switch phase {
+                case .empty:
+                    ProgressView()
+                    //.frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
+                case .success(let image):
+                    image.resizable()
+                        .aspectRatio(contentMode: .fill)
+                    //.frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
+                        .clipped()
+                case .failure:
+                    Image(systemName: "photo")
+                    //.frame(width: geometry.size.width, height: geometry.size.height, alignment: .center)
+                @unknown default:
+                    EmptyView()
+            }
+        }
+        //}
+    }
+}
+
+struct AsyncImageView_Previews: PreviewProvider {
+    static var previews: some View {
+        AsyncImageView()
+    }
+}

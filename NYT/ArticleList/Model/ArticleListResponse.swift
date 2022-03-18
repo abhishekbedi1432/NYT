@@ -19,12 +19,8 @@ struct ArticleListResponse: Codable {
     }
 }
 
-// MARK: - Result
-struct Article: Codable, Identifiable, Equatable {
-    
-    static func == (lhs: Article, rhs: Article) -> Bool {
-        return false
-    }
+// MARK: - Article
+struct Article: Codable, Identifiable {    
     
     let id, assetID: Int?
     let source, publishedDate, byline, type: String?
@@ -56,4 +52,48 @@ struct MediaMetadatum: Codable {
     let url: String?
     let format: String?
     let height, width: Int?
+}
+
+extension Article {
+    
+//    var imageUrl: URL? {
+//
+//        guard let urlString = media?.first?.mediaMetadata?.first?.url else {
+//            return nil
+//        }
+//
+//        return URL(string: urlString)
+//    }
+    
+    var imageUrlBig: URL? {
+        guard let urlString = media?.first?.mediaMetadata?.first(where: { $0.format == "mediumThreeByTwo440"})?.url else {
+            return nil
+        }
+        
+        return URL(string: urlString)
+    }
+}
+
+
+extension Article: ArticleDetailContract {
+    var author: String {
+        byline ?? ""
+    }
+    
+    var headline: String {
+        self.title ?? ""
+    }
+    
+    
+    var content: String {
+        abstract ?? ""
+    }
+    
+    var imageUrl: URL? {
+        guard let urlString = media?.first?.mediaMetadata?.first(where: { $0.format == "mediumThreeByTwo440"})?.url else {
+            return nil
+        }
+        
+        return URL(string: urlString)
+    }
 }
