@@ -8,6 +8,11 @@
 import SwiftUI
 import Kingfisher
 
+protocol ArticlePresentable {
+    
+}
+
+
 struct ArticleListCell: View {
     var article: Article
     
@@ -25,11 +30,12 @@ struct ArticleListCell: View {
 
     // V stack
     var body: some View {
-        HStack(alignment: .center, spacing: 15) {
+        HStack(alignment: .top, spacing: 10) {
             KFImage(article.imageUrlBig).resizable().aspectRatio(contentMode: .fit)
+                .frame(maxWidth:Constants.imageWidth, maxHeight: Constants.imageHeight, alignment: .leading)
             VStack(alignment: .leading, spacing: 8, content: {
                 
-                Text(article.title ?? "").font(.caption)
+                Text(article.title ?? "").font(.caption).foregroundColor(.gray)
                 Text(article.publishedDate ?? "").font(.subheadline)
             })
         //TODO: - Need to extract this.

@@ -36,6 +36,7 @@
 		3B53BA0B27E48C40003F2A6E /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53BA0A27E48C40003F2A6E /* MockNetworkManager.swift */; };
 		3B53BA0E27E48CB3003F2A6E /* ArticleListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53BA0D27E48CB3003F2A6E /* ArticleListTests.swift */; };
 		3B53BA1527E49189003F2A6E /* nyt_popular_response.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B53BA1427E49189003F2A6E /* nyt_popular_response.json */; };
+		3B53BA1727E4A323003F2A6E /* nyt_error_response.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B53BA1627E4A323003F2A6E /* nyt_error_response.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		3B53BA0A27E48C40003F2A6E /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
 		3B53BA0D27E48CB3003F2A6E /* ArticleListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListTests.swift; sourceTree = "<group>"; };
 		3B53BA1427E49189003F2A6E /* nyt_popular_response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = nyt_popular_response.json; sourceTree = "<group>"; };
+		3B53BA1627E4A323003F2A6E /* nyt_error_response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = nyt_error_response.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -315,6 +317,7 @@
 		3B53BA0F27E48DBF003F2A6E /* Responses */ = {
 			isa = PBXGroup;
 			children = (
+				3B53BA1627E4A323003F2A6E /* nyt_error_response.json */,
 				3B53BA1427E49189003F2A6E /* nyt_popular_response.json */,
 			);
 			path = Responses;
@@ -440,6 +443,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B53BA1527E49189003F2A6E /* nyt_popular_response.json in Resources */,
+				3B53BA1727E4A323003F2A6E /* nyt_error_response.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

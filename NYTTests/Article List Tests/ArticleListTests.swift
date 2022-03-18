@@ -63,4 +63,15 @@ class ArticleListTests: XCTestCase {
         XCTAssertEqual(firstArticle.publishedDate, date)
     }
     
+    
+    func test_article_response_failure() {
+        let mockNetworkManager = MockNetworkManager(withMockFile: "nyt_error_response")
+        sut = ArticleListViewModel(networkManager: mockNetworkManager)
+        
+        // When
+        sut.fetchArticles()
+
+        // Then
+        XCTAssertTrue(sut.articles.isEmpty)
+    }
 }
