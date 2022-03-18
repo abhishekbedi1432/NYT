@@ -33,11 +33,17 @@ class NetworkManager: NetworkContract {
             }
             do{
                 let response = try JSONDecoder().decode(T.self, from: data!)
-                completion(Result.success(response))
+                
+                DispatchQueue.main.async {
+                    completion(Result.success(response))
+                }
+                
             }
             catch(let error) {
                 print(error)
-                completion(Result.failure(NetworkError.invalidData))
+                DispatchQueue.main.async {
+                    completion(Result.failure(NetworkError.invalidData))
+                }                
             }
             
             //            guard let data = data, let response = try? JSONDecoder().decode(T.self, from: data) else {

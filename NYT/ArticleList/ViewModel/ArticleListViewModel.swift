@@ -23,9 +23,15 @@ class ArticleListViewModel: ArticleListContract {
     private let networkManager: NetworkContract
 
     init(articlesRepository: ArticleListRepositoryContract = ArticleListRepository(),
-        networkManager: NetworkContract = NetworkManager()) {
+         networkManager: NetworkContract = NetworkManager()) {
         
         self.articlesRepository = articlesRepository
+        self.networkManager = networkManager
+    }
+    
+    init(networkManager: NetworkContract = NetworkManager()) {
+        
+//        self.articlesRepository = articlesRepository
         self.networkManager = networkManager
     }
 
@@ -63,9 +69,10 @@ class ArticleListViewModel: ArticleListContract {
         
         switch result {
             case .success(let articles):
-                DispatchQueue.main.async { [weak self] in
-                    self?.articles = articles.articles ?? []
-                }
+                self.articles = articles.articles ?? []
+//                DispatchQueue.main.async { [weak self] in
+//                    self?.articles = articles.articles ?? []
+//                }
             case .failure(let error):
                 print(error)
         }

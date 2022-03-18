@@ -13,10 +13,10 @@ protocol ArticleListRepositoryContract {
 
 class ArticleListRepository: ArticleListRepositoryContract {
     
-    private var remoteDatasource: ArticleListRemoteDatasourceContractor
+    private var remoteDatasource: ArticleListRemoteDatasourceContract
     private var localDatasource: ArticleListLocalDatasourceContractor
     
-    init(remoteDatasource: ArticleListRemoteDatasourceContractor = ArticleListRemoteDatasource(),
+    init(remoteDatasource: ArticleListRemoteDatasourceContract = ArticleListRemoteDatasource(),
          localDatasource: ArticleListLocalDatasourceContractor = ArticleListLocalDatasource()) {
         self.remoteDatasource = remoteDatasource
         self.localDatasource = localDatasource

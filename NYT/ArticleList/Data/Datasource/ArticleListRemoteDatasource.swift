@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol ArticleListRemoteDatasourceContractor {
+protocol ArticleListRemoteDatasourceContract {
     func fetchArticles(completion: @escaping (Result<ArticleListResponse, Error>) -> Void)
 }
 
-class ArticleListRemoteDatasource: ArticleListRemoteDatasourceContractor {
+class ArticleListRemoteDatasource: ArticleListRemoteDatasourceContract {
     
     var baseUrl: String
     var networkManager: NetworkContract
