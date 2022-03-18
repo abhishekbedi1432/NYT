@@ -9,7 +9,7 @@ import Foundation
 
 protocol ArticleListContract: ObservableObject {
     var articles: [Article] { get set }
-    func fetchArticles(withRange: Int )
+    func fetchArticles(withRange: Int)
 }
 
 class ArticleListViewModel: ArticleListContract {
