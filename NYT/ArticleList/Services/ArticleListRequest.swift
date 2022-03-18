@@ -22,7 +22,7 @@ class ArticleListRequest: NetworkRequest {
         params["api-key"] = "7AP916lfRg6y1NCiz6kqyqH1v9CIB3ah" as AnyObject
         
         return URLRequest(baseURL: URL(string: baseUrl)!,
-                          path: "v2/mostviewed/all-sections/7.json",
+                          path: "v2/mostviewed/all-sections/1.json",
                           parameters: params)!
     }
 }

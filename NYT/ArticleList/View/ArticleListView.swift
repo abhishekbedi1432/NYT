@@ -25,7 +25,7 @@ struct ArticleListView<ViewModel>: View where ViewModel : ArticleListContract {
             .onLoad {
                 viewModel.fetchArticles()
             }
-            .navigationTitle("Most popular")
+            .navigationTitle(Text("Most popular"))
             .navigationBarTitleDisplayMode(.inline)
         }
     }
