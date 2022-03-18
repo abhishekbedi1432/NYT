@@ -10,6 +10,8 @@ import Foundation
 protocol ArticleListContract: ObservableObject {
     var articles: [Article] { get set }
     func fetchArticles()
+    func fetchArticles(withRange: Int ) 
+
 }
 
 class ArticleListViewModel: ArticleListContract {
@@ -17,25 +19,15 @@ class ArticleListViewModel: ArticleListContract {
     // State
     @Published var articles: [Article] = []
     
-    // Dependencies
-    private var articlesRepository: ArticleListRepositoryContract?
-
     private let networkManager: NetworkContract
 
-    init(articlesRepository: ArticleListRepositoryContract = ArticleListRepository(),
-         networkManager: NetworkContract = URLSession.shared) {
-        
-        self.articlesRepository = articlesRepository
-        self.networkManager = networkManager
-    }
-    
     init(networkManager: NetworkContract = URLSession.shared) {
-       
-//        self.articlesRepository = articlesRepository
         self.networkManager = networkManager
     }
 
-    func fetchArticles() {
+    func fetchArticles() {}
+
+    func fetchArticles(withRange: Int = 1) {
         let request = ArticleListRequest(baseUrl: NetworkConstants.host)
         networkManager.sendRequest(request: request, completion: onCompletion)
         
@@ -50,17 +42,6 @@ class ArticleListViewModel: ArticleListContract {
 //                    print(error)
 //            }
 //
-//        }
-        
-//        articlesRepository?.fetchArticles { [weak self] result in
-//            switch result {
-//                case .success(let articles):
-//                    DispatchQueue.main.async { [weak self] in
-//                        self?.articles = articles
-//                    }
-//                case .failure(let error):
-//                    print(error)
-//            }
 //        }
     }
     

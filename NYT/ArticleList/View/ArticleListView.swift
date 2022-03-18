@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct ArticleListView<ViewModel>: View where ViewModel: ArticleListContract {
-
+    
     // MARK: Constants
     private let screenTitle = "Most Popular Articles"
-    
+    @State private var showModal: Bool = false
+    @State var selectedPeriodRange: ArticlePeriodOption = .daily
+
     // MARK: Properties
     @ObservedObject private(set) var viewModel: ViewModel
-
+    
     var body: some View {
         NavigationView {
             List {
@@ -24,13 +26,29 @@ struct ArticleListView<ViewModel>: View where ViewModel: ArticleListContract {
                     }
                 }
             }.onLoad {
-                viewModel.fetchArticles()
+                viewModel.fetchArticles(withRange: selectedPeriodRange.rawValue)
             }
             .navigationTitle(Text(screenTitle))
+            .navigationBarItems( trailing:
+                                    Button(action: {self.showModal = true}) {
+                HStack(){
+                    Text(selectedPeriodRange.value)
+                    Image(systemName: "arrow.up.arrow.down")
+
+                }
+                
+            }.sheet(isPresented: self.$showModal) {
+                NavigationView {
+                    ArticlePeriodView(selectedPeriodRange: self.$selectedPeriodRange, showModal: self.$showModal)
+                }
+            }
+            )
         }
+        
         .navigationViewStyle(.stack)
     }
 }
+
 
 // MARK: Article Details
 private extension ArticleListView {

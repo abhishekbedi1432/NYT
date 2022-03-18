@@ -15,7 +15,6 @@ class ArticleListRequest: NetworkRequest {
         self.baseUrl = baseUrl
     }
     
-    //TODO: - Fix this anmyobject issue
     var urlRequest: URLRequest {
         
         var params:[String: AnyObject] = [:]

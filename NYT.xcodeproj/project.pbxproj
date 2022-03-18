@@ -38,6 +38,9 @@
 		3B53BA1927E4E5AF003F2A6E /* ArticleListPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53BA1827E4E5AF003F2A6E /* ArticleListPresentable.swift */; };
 		3B53BA1B27E4E90E003F2A6E /* Article+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53BA1A27E4E90E003F2A6E /* Article+Extension.swift */; };
 		3B53BA1D27E4EEC3003F2A6E /* NetworkContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53BA1C27E4EEC3003F2A6E /* NetworkContract.swift */; };
+		3BA2346C27E5088E00F25454 /* ArticlePeriodRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA2346927E5088E00F25454 /* ArticlePeriodRow.swift */; };
+		3BA2346D27E5088E00F25454 /* ArticlePeriodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA2346A27E5088E00F25454 /* ArticlePeriodView.swift */; };
+		3BA2346E27E5088E00F25454 /* ArticlePeriodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA2346B27E5088E00F25454 /* ArticlePeriodViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +94,10 @@
 		3B53BA1827E4E5AF003F2A6E /* ArticleListPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListPresentable.swift; sourceTree = "<group>"; };
 		3B53BA1A27E4E90E003F2A6E /* Article+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Article+Extension.swift"; sourceTree = "<group>"; };
 		3B53BA1C27E4EEC3003F2A6E /* NetworkContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkContract.swift; sourceTree = "<group>"; };
+		3BA2346927E5088E00F25454 /* ArticlePeriodRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlePeriodRow.swift; sourceTree = "<group>"; };
+		3BA2346A27E5088E00F25454 /* ArticlePeriodView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlePeriodView.swift; sourceTree = "<group>"; };
+		3BA2346B27E5088E00F25454 /* ArticlePeriodViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlePeriodViewModel.swift; sourceTree = "<group>"; };
+		3BA2346F27E5183600F25454 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +149,7 @@
 		3B53B99727E3BD3A003F2A6E /* NYT */ = {
 			isa = PBXGroup;
 			children = (
+				3BA2346F27E5183600F25454 /* Info.plist */,
 				3B53B9D027E3CA80003F2A6E /* Helpers */,
 				3B53B9CA27E3C32B003F2A6E /* Networking */,
 				3B53B9C227E3BDAF003F2A6E /* ArticleList */,
@@ -212,6 +220,7 @@
 		3B53B9C527E3BE06003F2A6E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3BA2346827E5088E00F25454 /* ArticlePeriod */,
 				3B53BA1827E4E5AF003F2A6E /* ArticleListPresentable.swift */,
 				3B53B9F527E454E9003F2A6E /* ArticleListView.swift */,
 				3B53B9F927E45693003F2A6E /* ArticleListCell.swift */,
@@ -324,6 +333,16 @@
 				3B53BA1427E49189003F2A6E /* nyt_popular_response.json */,
 			);
 			path = Responses;
+			sourceTree = "<group>";
+		};
+		3BA2346827E5088E00F25454 /* ArticlePeriod */ = {
+			isa = PBXGroup;
+			children = (
+				3BA2346927E5088E00F25454 /* ArticlePeriodRow.swift */,
+				3BA2346A27E5088E00F25454 /* ArticlePeriodView.swift */,
+				3BA2346B27E5088E00F25454 /* ArticlePeriodViewModel.swift */,
+			);
+			path = ArticlePeriod;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -474,14 +493,17 @@
 				3B53B9E927E3D8B5003F2A6E /* ArticleListRequest.swift in Sources */,
 				3B53B9E627E3D7D4003F2A6E /* URLRequest+Convenience.swift in Sources */,
 				3B53BA1927E4E5AF003F2A6E /* ArticleListPresentable.swift in Sources */,
+				3BA2346E27E5088E00F25454 /* ArticlePeriodViewModel.swift in Sources */,
 				3B53B9F027E3E083003F2A6E /* ArticleListLocalDatasource.swift in Sources */,
 				3B53B9FC27E45D27003F2A6E /* ArticleDetailView.swift in Sources */,
 				3B53B9C927E3C09B003F2A6E /* ArticleListViewModel.swift in Sources */,
 				3B53BA1D27E4EEC3003F2A6E /* NetworkContract.swift in Sources */,
+				3BA2346C27E5088E00F25454 /* ArticlePeriodRow.swift in Sources */,
 				3B53B9F227E3E0CE003F2A6E /* ArticleListRemoteDatasource.swift in Sources */,
 				3B53BA1B27E4E90E003F2A6E /* Article+Extension.swift in Sources */,
 				3B53B9ED27E3DF76003F2A6E /* ArticleListRepository.swift in Sources */,
 				3B53B9C727E3C044003F2A6E /* ArticleListResponse.swift in Sources */,
+				3BA2346D27E5088E00F25454 /* ArticlePeriodView.swift in Sources */,
 				3B53B99927E3BD3A003F2A6E /* NYTApp.swift in Sources */,
 				3B53BA0827E47D2C003F2A6E /* ArticleDetailViewModel.swift in Sources */,
 				3B53BA0527E4754B003F2A6E /* ArticleDetailCellView.swift in Sources */,
@@ -650,9 +672,9 @@
 				DEVELOPMENT_TEAM = D3BM54CRMY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NYT/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -679,9 +701,9 @@
 				DEVELOPMENT_TEAM = D3BM54CRMY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NYT/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
