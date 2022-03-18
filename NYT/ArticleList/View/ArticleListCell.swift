@@ -20,15 +20,8 @@ struct ArticleListCell: View {
         static let imageWidth: CGFloat = 100
         static let imageHeight: CGFloat = 80
     }
-    
-//    var body: some View {
-//        HStack(alignment: .center, spacing: 15) {
-//            KFImage(article.imageUrl).resizable().aspectRatio(contentMode: .fit)
-//            Text(article.title ?? "").font(.subheadline)
-//        }
-//    }
 
-    // V stack
+
     var body: some View {
         HStack(alignment: .top, spacing: 10) {
             KFImage(article.imageUrlBig).resizable().aspectRatio(contentMode: .fit)
@@ -38,30 +31,9 @@ struct ArticleListCell: View {
                 Text(article.title ?? "").font(.caption).foregroundColor(.gray)
                 Text(article.publishedDate ?? "").font(.subheadline)
             })
-        //TODO: - Need to extract this.
-//            Image(systemName: "chevron.forward")
-//                .font(Font.system(.caption).weight(.bold))
-//                .foregroundColor(Color(UIColor.tertiaryLabel))
         }
         .padding(10)
     }
-        
-    
-
-    
-    
-    
-//    var body: some View {
-//        HStack(spacing: 8) {
-//            KFImage(article.imageUrl).aspectRatio(contentMode: .fit)
-////            AsyncImageView(imageUrl: URL(string: article.media?.first?.mediaMetadata?.first?.url ?? ""))
-//                .frame(width: Constants.imageWidth, height: Constants.imageHeight)
-//
-////                .aspectRatio(contentMode: .fill)
-//
-//            Text(article.title ?? "").font(.subheadline)
-//        }
-//    }
 }
 
 struct ArticleListCell_Previews: PreviewProvider {

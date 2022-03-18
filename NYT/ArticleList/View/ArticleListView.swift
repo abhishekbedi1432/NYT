@@ -12,24 +12,6 @@ struct ArticleListView<ViewModel>: View where ViewModel: ArticleListContract {
     // MARK: Properties
     @ObservedObject private(set) var viewModel: ViewModel
 
-//    var body: some View {
-//        NavigationView {
-//            ScrollView {
-//
-//                ForEach(viewModel.articles) { article in
-//                    NavigationLink(destination: articleDetailsView(for: article)) {
-//                        ArticleListCell(article: article)
-//                    }
-//                }
-//            }
-//            .onLoad {
-//                viewModel.fetchArticles()
-//            }
-//            .navigationTitle(Text("Most popular"))
-//            .navigationBarTitleDisplayMode(.inline)
-//        }
-//    }
-    
     var body: some View {
         NavigationView {
             List {
@@ -42,12 +24,9 @@ struct ArticleListView<ViewModel>: View where ViewModel: ArticleListContract {
                 viewModel.fetchArticles()
             }
             .navigationTitle(Text("Most Popular Articles"))
-//            .navigationBarTitleDisplayMode(.inline)
-
         }
         .navigationViewStyle(.stack)
     }
-
 }
 
 private extension ArticleListView {

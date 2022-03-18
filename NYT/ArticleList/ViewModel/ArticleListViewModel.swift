@@ -23,13 +23,13 @@ class ArticleListViewModel: ArticleListContract {
     private let networkManager: NetworkContract
 
     init(articlesRepository: ArticleListRepositoryContract = ArticleListRepository(),
-         networkManager: NetworkContract = NetworkManager()) {
+         networkManager: NetworkContract = URLSession.shared) {
         
         self.articlesRepository = articlesRepository
         self.networkManager = networkManager
     }
     
-    init(networkManager: NetworkContract = NetworkManager()) {
+    init(networkManager: NetworkContract = URLSession.shared) {
         
 //        self.articlesRepository = articlesRepository
         self.networkManager = networkManager
