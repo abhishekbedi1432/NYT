@@ -7,16 +7,10 @@
 import Foundation
 
 protocol ArticlePresentable {
-    var imageUrl: URL? { get }
     var headline: String { get }
     var date: String { get }
     var author: String { get }
     var content: String { get }
+    var thumbnailUrl: URL? { get }
+    var imageUrl: URL? { get }
 }
-
-protocol ArticleListPresentable: ArticlePresentable {
-    var date: String { get }
-}
-
-
-protocol ArticleDetailPresentable: ArticlePresentable {}

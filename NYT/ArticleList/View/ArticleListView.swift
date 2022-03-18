@@ -10,7 +10,7 @@ import SwiftUI
 struct ArticleListView<ViewModel>: View where ViewModel: ArticleListContract {
     
     // MARK: Constants
-    private let screenTitle = "Most Popular Articles"
+    private let screenTitle = "NY Times Articles"
     @State private var showModal: Bool = false
     @State var selectedPeriodRange: ArticlePeriodOption = .daily
 
@@ -35,7 +35,7 @@ struct ArticleListView<ViewModel>: View where ViewModel: ArticleListContract {
                                     Button(action: {self.showModal = true}) {
                 HStack(){
                     Text(selectedPeriodRange.value)
-                    Image(systemName: "arrow.up.arrow.down")
+                    Image(systemName: "line.3.horizontal.decrease.circle")
                 }
                 
             }.sheet(isPresented: self.$showModal) {
@@ -55,7 +55,7 @@ struct ArticleListView<ViewModel>: View where ViewModel: ArticleListContract {
 // MARK: Article Details
 private extension ArticleListView {
     
-    func articleDetailsView(for article: Article) -> ArticleDetailView {
+    func articleDetailsView(for article: ArticlePresentable) -> ArticleDetailView {
         ArticleDetailView(viewModel: article)
     }
 }

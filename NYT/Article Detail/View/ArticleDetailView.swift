@@ -8,26 +8,36 @@
 import SwiftUI
 
 struct ArticleDetailView: View {
-
-    var viewModel: ArticleDetailPresentable!
-
+    
+    var viewModel: ArticlePresentable
+    
     var body: some View {
-
+        
         ScrollView {
-            VStack(alignment: .leading) {
-                AsyncImageView(imageUrl: viewModel.imageUrl).aspectRatio(contentMode: .fit)
+            VStack(alignment: .center) {
+                AsyncImageView(imageUrl: viewModel.imageUrl)
+                    .aspectRatio(contentMode: .fit)
+                    .frame(minWidth: 0, maxWidth: .infinity)
+                    .edgesIgnoringSafeArea(.top)
                 ArticleDetailCellView(title: viewModel.headline,
                                       subTitle: viewModel.author,
                                       abstract: viewModel.content)
-            }.padding()
+            }
         }
+        .navigationBarTitleDisplayMode(.inline)
+        
     }
 }
 
 struct ArticleDetailView_Previews: PreviewProvider {
     static var previews: some View {
         let url = URL(string: "https://static01.nyt.com/images/2022/03/09/world/09cli-shackleton-handout2/09cli-shackleton-handout2-mediumThreeByTwo440.jpg")
-        ArticleDetailView(viewModel: ArticleDetailViewModel(imageUrl: url,
-                                                            headline: "Headline", date: "2022-03-18", author: "Author", content: "Abstract"))
+        
+        let viewModel = ArticleDetailViewModel(
+            headline: "Headline Headline Headline Headline Headline Headline Headline Headline Headline ",
+            date: "2022-03-18",
+            author: "Author Author Author Author Author Author",
+            content: "Abstract", imageUrl: url)
+        ArticleDetailView(viewModel: viewModel)
     }
 }

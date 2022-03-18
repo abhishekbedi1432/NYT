@@ -9,7 +9,8 @@ import SwiftUI
 import Kingfisher
 
 struct ArticleListCell: View {
-    var article: ArticleListPresentable
+    
+    var article: ArticlePresentable
     
     // MARK: Constants
     struct Constants {
@@ -22,7 +23,7 @@ struct ArticleListCell: View {
         HStack(alignment: .center) {
             // MARK: ImageView
             
-            KFImage(article.imageUrl)
+            KFImage(article.thumbnailUrl)
                 .frame(width: Constants.imageWidth, height: Constants.imageHeight, alignment: .leading)
                 .clipShape(Circle())
             

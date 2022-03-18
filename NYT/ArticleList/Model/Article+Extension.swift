@@ -21,22 +21,29 @@ extension Article: ArticlePresentable {
     }
 
     var imageUrl: URL? {
+        
         guard let urlString = media?.first?.mediaMetadata?.first(where: { $0.format == "mediumThreeByTwo440"})?.url else {
             return nil
         }
 
         return URL(string: urlString)
     }
-}
-
-extension Article: ArticleListPresentable {
+    
+    var thumbnailUrl: URL? {
+        
+        guard let urlString = media?.first?.mediaMetadata?.first(where: { $0.format == "Standard Thumbnail"})?.url else {
+            return nil
+        }
+        
+        return URL(string: urlString)
+    }
     
     var date: String {
-        
-        guard let publishedDate = publishedDate else {
-            return ""
-        }
-        return publishedDate //.getFormattedDate()
+        return publishedDate ?? ""
+        //        guard let publishedDate = publishedDate else {
+        //            return ""
+        //        }
+        //        return publishedDate //.getFormattedDate()
         //        let dateFormatter = DateFormatter()
         //        dateFormatter.dateFormat = "YY-MM-DD"
         //
@@ -45,11 +52,6 @@ extension Article: ArticleListPresentable {
         //        dateFormatter.dateStyle = .short
         //        return dateFormatter.string(from: date1)
     }
-}
-
-extension Article: ArticleDetailPresentable {
-    
-    
 }
 
 

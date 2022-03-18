@@ -7,10 +7,12 @@
 
 import Foundation
 
-struct ArticleDetailViewModel: ArticleDetailPresentable {
-    var imageUrl: URL?
+struct ArticleDetailViewModel: ArticlePresentable {
+    
     var headline: String
     var date: String
     var author: String
     var content: String
+    var thumbnailUrl: URL?
+    var imageUrl: URL?
 }
