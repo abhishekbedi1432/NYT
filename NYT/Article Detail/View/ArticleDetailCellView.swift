@@ -14,9 +14,10 @@ struct ArticleDetailCellView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 15) {
-            Text("\(title)").font(.system(.title))
+            Text("\(title)").font(.system(.headline))
             Text("\(subTitle)").font(.system(.subheadline)).foregroundColor(.gray)
             Text("\(abstract)").font(.system(.subheadline)).foregroundColor(.gray)
+            Spacer()
 
         }
     }

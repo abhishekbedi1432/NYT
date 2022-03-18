@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ArticleListView<ViewModel>: View where ViewModel : ArticleListContract {
+struct ArticleListView<ViewModel>: View where ViewModel: ArticleListContract {
 
     // MARK: Properties
     @ObservedObject private(set) var viewModel: ViewModel

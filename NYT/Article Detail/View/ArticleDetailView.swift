@@ -17,25 +17,24 @@ protocol ArticleDetailContract {
 struct ArticleDetailView: View {
     //TODO: - Need to use contract here
     var viewModel: ArticleDetailContract!
-    
+
     var body: some View {
-        VStack {
-            
-            AsyncImageView(imageUrl: viewModel.imageUrl).aspectRatio(contentMode: .fit)
-            
-            Form {
-                Section {
-                    ArticleDetailCellView(title: viewModel.headline,
-                                          subTitle: viewModel.author,
-                                          abstract: viewModel.content)
-                }
-            }.accentColor(.secondary)
+
+        ScrollView {
+            VStack(alignment: .leading) {
+                AsyncImageView(imageUrl: viewModel.imageUrl).aspectRatio(contentMode: .fit)
+                ArticleDetailCellView(title: viewModel.headline,
+                                      subTitle: viewModel.author,
+                                      abstract: viewModel.content)
+            }.padding()
         }
     }
 }
 
 struct ArticleDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ArticleDetailView(viewModel: ArticleDetailViewModel(headline: "Headline", author: "Author", content: "Abstract"))
+        let url = URL(string: "https://static01.nyt.com/images/2022/03/09/world/09cli-shackleton-handout2/09cli-shackleton-handout2-mediumThreeByTwo440.jpg")
+        ArticleDetailView(viewModel: ArticleDetailViewModel(imageUrl: url,
+            headline: "Headline", author: "Author", content: "Abstract"))
     }
 }
