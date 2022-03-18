@@ -39,9 +39,9 @@ struct ArticleListCell: View {
                 Text(article.publishedDate ?? "").font(.subheadline)
             })
         //TODO: - Need to extract this.
-            Image(systemName: "chevron.forward")
-                .font(Font.system(.caption).weight(.bold))
-                .foregroundColor(Color(UIColor.tertiaryLabel))
+//            Image(systemName: "chevron.forward")
+//                .font(Font.system(.caption).weight(.bold))
+//                .foregroundColor(Color(UIColor.tertiaryLabel))
         }
         .padding(10)
     }

@@ -12,38 +12,42 @@ struct ArticleListView<ViewModel>: View where ViewModel : ArticleListContract {
     // MARK: Properties
     @ObservedObject private(set) var viewModel: ViewModel
 
+//    var body: some View {
+//        NavigationView {
+//            ScrollView {
+//
+//                ForEach(viewModel.articles) { article in
+//                    NavigationLink(destination: articleDetailsView(for: article)) {
+//                        ArticleListCell(article: article)
+//                    }
+//                }
+//            }
+//            .onLoad {
+//                viewModel.fetchArticles()
+//            }
+//            .navigationTitle(Text("Most popular"))
+//            .navigationBarTitleDisplayMode(.inline)
+//        }
+//    }
+    
     var body: some View {
         NavigationView {
-            ScrollView {
-
+            List {
                 ForEach(viewModel.articles) { article in
                     NavigationLink(destination: articleDetailsView(for: article)) {
                         ArticleListCell(article: article)
                     }
                 }
-            }
-            .onLoad {
+            }.onLoad {
                 viewModel.fetchArticles()
             }
-            .navigationTitle(Text("Most popular"))
-            .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle(Text("Most Popular Articles"))
+//            .navigationBarTitleDisplayMode(.inline)
+
         }
+        .navigationViewStyle(.stack)
     }
-    
-//    var body: some View {
-//        List {
-//            ForEach(viewModel.articles, id:\.self) { article in
-//                NavigationLink(destination: articleDetailsView(for: article)) {
-//                    ArticleListCell(article: article)
-//                }
-//            }
-//        }.onLoad {
-//            viewModel.fetchArticles()
-//        }
-//        //        .onAppear(perform: onRefreshButtonClicked)
-//        .navigationBarTitle("Today's Feeds", displayMode: .inline)
-//    }
-//
+
 }
 
 private extension ArticleListView {
