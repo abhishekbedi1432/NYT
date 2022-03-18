@@ -14,7 +14,6 @@ protocol ArticleListContract: ObservableObject {
 
 class ArticleListViewModel: ArticleListContract {
     
-    // State
     @Published var articles: [Article] = []
     
     private let networkManager: NetworkContract
@@ -24,18 +23,26 @@ class ArticleListViewModel: ArticleListContract {
     }
 
     func fetchArticles(withRange timePeriod: Int = 1) {
+        
         let request = ArticleListRequest(baseUrl: NetworkConstants.host, timePeriod: timePeriod)
         
         networkManager.processRequest(request: request, type: ArticleListResponse.self) { [weak self] result in
             switch result {
                 case .success(let response):
                     DispatchQueue.main.async { [weak self] in
-                        self?.articles = response.articles ?? []
+                        self?.articles = response.articles?.sortedByDate ?? []
                     }
                 case .failure(let error):
                     print(error)
             }
-            
         }
+    }
+}
+
+
+private extension Array where Element == Article {
+    
+    var sortedByDate: [Article] {
+        return self
     }
 }
