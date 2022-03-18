@@ -29,6 +29,8 @@ struct ArticleListView<ViewModel>: View where ViewModel: ArticleListContract {
                 viewModel.fetchArticles(withRange: selectedPeriodRange.rawValue)
             }
             .navigationTitle(Text(screenTitle))
+            .listRowBackground(Color.clear)
+            .listStyle(GroupedListStyle())
             .navigationBarItems( trailing:
                                     Button(action: {self.showModal = true}) {
                 HStack(){
@@ -44,7 +46,6 @@ struct ArticleListView<ViewModel>: View where ViewModel: ArticleListContract {
             }
             )
         }
-        
         .navigationViewStyle(.stack)
     }
 }

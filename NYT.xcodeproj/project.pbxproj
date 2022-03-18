@@ -20,9 +20,6 @@
 		3B53B9E427E3D7B8003F2A6E /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53B9E327E3D7B8003F2A6E /* NetworkConstants.swift */; };
 		3B53B9E627E3D7D4003F2A6E /* URLRequest+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53B9E527E3D7D4003F2A6E /* URLRequest+Convenience.swift */; };
 		3B53B9E927E3D8B5003F2A6E /* ArticleListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53B9E827E3D8B5003F2A6E /* ArticleListRequest.swift */; };
-		3B53B9ED27E3DF76003F2A6E /* ArticleListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53B9EC27E3DF76003F2A6E /* ArticleListRepository.swift */; };
-		3B53B9F027E3E083003F2A6E /* ArticleListLocalDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53B9EF27E3E083003F2A6E /* ArticleListLocalDatasource.swift */; };
-		3B53B9F227E3E0CE003F2A6E /* ArticleListRemoteDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53B9F127E3E0CE003F2A6E /* ArticleListRemoteDatasource.swift */; };
 		3B53B9F627E454E9003F2A6E /* ArticleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53B9F527E454E9003F2A6E /* ArticleListView.swift */; };
 		3B53B9F827E45609003F2A6E /* ViewDidLoadModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53B9F727E45609003F2A6E /* ViewDidLoadModifier.swift */; };
 		3B53B9FA27E45693003F2A6E /* ArticleListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53B9F927E45693003F2A6E /* ArticleListCell.swift */; };
@@ -41,6 +38,7 @@
 		3BA2346C27E5088E00F25454 /* ArticlePeriodRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA2346927E5088E00F25454 /* ArticlePeriodRow.swift */; };
 		3BA2346D27E5088E00F25454 /* ArticlePeriodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA2346A27E5088E00F25454 /* ArticlePeriodView.swift */; };
 		3BA2346E27E5088E00F25454 /* ArticlePeriodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA2346B27E5088E00F25454 /* ArticlePeriodViewModel.swift */; };
+		3BA2347427E51E4100F25454 /* Shimmer in Frameworks */ = {isa = PBXBuildFile; productRef = 3BA2347327E51E4100F25454 /* Shimmer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,9 +75,6 @@
 		3B53B9E327E3D7B8003F2A6E /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 		3B53B9E527E3D7D4003F2A6E /* URLRequest+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Convenience.swift"; sourceTree = "<group>"; };
 		3B53B9E827E3D8B5003F2A6E /* ArticleListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListRequest.swift; sourceTree = "<group>"; };
-		3B53B9EC27E3DF76003F2A6E /* ArticleListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListRepository.swift; sourceTree = "<group>"; };
-		3B53B9EF27E3E083003F2A6E /* ArticleListLocalDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListLocalDatasource.swift; sourceTree = "<group>"; };
-		3B53B9F127E3E0CE003F2A6E /* ArticleListRemoteDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListRemoteDatasource.swift; sourceTree = "<group>"; };
 		3B53B9F527E454E9003F2A6E /* ArticleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListView.swift; sourceTree = "<group>"; };
 		3B53B9F727E45609003F2A6E /* ViewDidLoadModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDidLoadModifier.swift; sourceTree = "<group>"; };
 		3B53B9F927E45693003F2A6E /* ArticleListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListCell.swift; sourceTree = "<group>"; };
@@ -105,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BA2347427E51E4100F25454 /* Shimmer in Frameworks */,
 				3B53BA0127E4688E003F2A6E /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,6 +145,7 @@
 		3B53B99727E3BD3A003F2A6E /* NYT */ = {
 			isa = PBXGroup;
 			children = (
+				3BA2347527E51EFE00F25454 /* Components */,
 				3BA2346F27E5183600F25454 /* Info.plist */,
 				3B53B9D027E3CA80003F2A6E /* Helpers */,
 				3B53B9CA27E3C32B003F2A6E /* Networking */,
@@ -191,7 +188,6 @@
 		3B53B9C227E3BDAF003F2A6E /* ArticleList */ = {
 			isa = PBXGroup;
 			children = (
-				3B53B9EA27E3DF39003F2A6E /* Data */,
 				3B53B9E727E3D8A7003F2A6E /* Services */,
 				3B53B9C327E3BDF1003F2A6E /* Model */,
 				3B53B9C427E3BDFA003F2A6E /* ViewModel */,
@@ -224,7 +220,6 @@
 				3B53BA1827E4E5AF003F2A6E /* ArticleListPresentable.swift */,
 				3B53B9F527E454E9003F2A6E /* ArticleListView.swift */,
 				3B53B9F927E45693003F2A6E /* ArticleListCell.swift */,
-				3B53B9FD27E466C8003F2A6E /* AsyncImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -255,32 +250,6 @@
 				3B53B9E827E3D8B5003F2A6E /* ArticleListRequest.swift */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		3B53B9EA27E3DF39003F2A6E /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				3B53B9EE27E3E037003F2A6E /* Datasource */,
-				3B53B9EB27E3DF63003F2A6E /* Repository */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		3B53B9EB27E3DF63003F2A6E /* Repository */ = {
-			isa = PBXGroup;
-			children = (
-				3B53B9EC27E3DF76003F2A6E /* ArticleListRepository.swift */,
-			);
-			path = Repository;
-			sourceTree = "<group>";
-		};
-		3B53B9EE27E3E037003F2A6E /* Datasource */ = {
-			isa = PBXGroup;
-			children = (
-				3B53B9EF27E3E083003F2A6E /* ArticleListLocalDatasource.swift */,
-				3B53B9F127E3E0CE003F2A6E /* ArticleListRemoteDatasource.swift */,
-			);
-			path = Datasource;
 			sourceTree = "<group>";
 		};
 		3B53BA0227E47359003F2A6E /* Article Detail */ = {
@@ -345,6 +314,14 @@
 			path = ArticlePeriod;
 			sourceTree = "<group>";
 		};
+		3BA2347527E51EFE00F25454 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				3B53B9FD27E466C8003F2A6E /* AsyncImageView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -363,6 +340,7 @@
 			name = NYT;
 			packageProductDependencies = (
 				3B53BA0027E4688E003F2A6E /* Kingfisher */,
+				3BA2347327E51E4100F25454 /* Shimmer */,
 			);
 			productName = NYT;
 			productReference = 3B53B99527E3BD3A003F2A6E /* NYT.app */;
@@ -438,6 +416,7 @@
 			mainGroup = 3B53B98C27E3BD3A003F2A6E;
 			packageReferences = (
 				3B53B9FF27E4688E003F2A6E /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				3BA2347227E51E4100F25454 /* XCRemoteSwiftPackageReference "Shimmer" */,
 			);
 			productRefGroup = 3B53B99627E3BD3A003F2A6E /* Products */;
 			projectDirPath = "";
@@ -494,14 +473,11 @@
 				3B53B9E627E3D7D4003F2A6E /* URLRequest+Convenience.swift in Sources */,
 				3B53BA1927E4E5AF003F2A6E /* ArticleListPresentable.swift in Sources */,
 				3BA2346E27E5088E00F25454 /* ArticlePeriodViewModel.swift in Sources */,
-				3B53B9F027E3E083003F2A6E /* ArticleListLocalDatasource.swift in Sources */,
 				3B53B9FC27E45D27003F2A6E /* ArticleDetailView.swift in Sources */,
 				3B53B9C927E3C09B003F2A6E /* ArticleListViewModel.swift in Sources */,
 				3B53BA1D27E4EEC3003F2A6E /* NetworkContract.swift in Sources */,
 				3BA2346C27E5088E00F25454 /* ArticlePeriodRow.swift in Sources */,
-				3B53B9F227E3E0CE003F2A6E /* ArticleListRemoteDatasource.swift in Sources */,
 				3B53BA1B27E4E90E003F2A6E /* Article+Extension.swift in Sources */,
-				3B53B9ED27E3DF76003F2A6E /* ArticleListRepository.swift in Sources */,
 				3B53B9C727E3C044003F2A6E /* ArticleListResponse.swift in Sources */,
 				3BA2346D27E5088E00F25454 /* ArticlePeriodView.swift in Sources */,
 				3B53B99927E3BD3A003F2A6E /* NYTApp.swift in Sources */,
@@ -845,6 +821,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		3BA2347227E51E4100F25454 /* XCRemoteSwiftPackageReference "Shimmer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/joshuajhomann/Shimmer";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -852,6 +836,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3B53B9FF27E4688E003F2A6E /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		3BA2347327E51E4100F25454 /* Shimmer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3BA2347227E51E4100F25454 /* XCRemoteSwiftPackageReference "Shimmer" */;
+			productName = Shimmer;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
