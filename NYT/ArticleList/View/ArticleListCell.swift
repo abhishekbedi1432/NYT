@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Kingfisher
 
 struct ArticleListCell: View {
     
@@ -22,9 +21,10 @@ struct ArticleListCell: View {
     var body: some View {
         HStack(alignment: .center) {
             // MARK: ImageView
-            
-            KFImage(article.thumbnailUrl)
-                .frame(width: Constants.imageWidth, height: Constants.imageHeight, alignment: .leading)
+                        
+            AsyncImageView(imageUrl: article.thumbnailUrl)
+                .aspectRatio(contentMode: .fit)
+                .frame(minWidth: Constants.imageWidth, maxWidth: Constants.imageHeight)
                 .clipShape(Circle())
             
             // MARK: Title / Subtitle

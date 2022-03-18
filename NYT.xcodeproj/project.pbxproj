@@ -25,7 +25,6 @@
 		3B53B9FA27E45693003F2A6E /* ArticleListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53B9F927E45693003F2A6E /* ArticleListCell.swift */; };
 		3B53B9FC27E45D27003F2A6E /* ArticleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53B9FB27E45D27003F2A6E /* ArticleDetailView.swift */; };
 		3B53B9FE27E466C8003F2A6E /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53B9FD27E466C8003F2A6E /* AsyncImageView.swift */; };
-		3B53BA0127E4688E003F2A6E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 3B53BA0027E4688E003F2A6E /* Kingfisher */; };
 		3B53BA0527E4754B003F2A6E /* ArticleDetailCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53BA0427E4754B003F2A6E /* ArticleDetailCellView.swift */; };
 		3B53BA0827E47D2C003F2A6E /* ArticleDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53BA0727E47D2C003F2A6E /* ArticleDetailViewModel.swift */; };
 		3B53BA0B27E48C40003F2A6E /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53BA0A27E48C40003F2A6E /* MockNetworkManager.swift */; };
@@ -101,7 +100,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BA2347427E51E4100F25454 /* Shimmer in Frameworks */,
-				3B53BA0127E4688E003F2A6E /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,7 +337,6 @@
 			);
 			name = NYT;
 			packageProductDependencies = (
-				3B53BA0027E4688E003F2A6E /* Kingfisher */,
 				3BA2347327E51E4100F25454 /* Shimmer */,
 			);
 			productName = NYT;
@@ -415,7 +412,6 @@
 			);
 			mainGroup = 3B53B98C27E3BD3A003F2A6E;
 			packageReferences = (
-				3B53B9FF27E4688E003F2A6E /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				3BA2347227E51E4100F25454 /* XCRemoteSwiftPackageReference "Shimmer" */,
 			);
 			productRefGroup = 3B53B99627E3BD3A003F2A6E /* Products */;
@@ -813,14 +809,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3B53B9FF27E4688E003F2A6E /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.0.0;
-			};
-		};
 		3BA2347227E51E4100F25454 /* XCRemoteSwiftPackageReference "Shimmer" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/joshuajhomann/Shimmer";
@@ -832,11 +820,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3B53BA0027E4688E003F2A6E /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3B53B9FF27E4688E003F2A6E /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
-		};
 		3BA2347327E51E4100F25454 /* Shimmer */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3BA2347227E51E4100F25454 /* XCRemoteSwiftPackageReference "Shimmer" */;
