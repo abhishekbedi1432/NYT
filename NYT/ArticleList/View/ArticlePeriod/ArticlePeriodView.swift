@@ -2,10 +2,11 @@
 
 import SwiftUI
 
-struct ArticlePeriodView: View {
+struct ArticlePeriodView<ViewModel>: View where ViewModel: ArticleListContract {
     @Environment (\.presentationMode) var presentationMode
     @Binding var selectedPeriodRange: ArticlePeriodOption
     @Binding var showModal: Bool
+    @ObservedObject private(set) var viewModel: ViewModel
 
     var model = ArticlePeriodViewModel().sortOptions()
 
@@ -15,11 +16,12 @@ struct ArticlePeriodView: View {
                 Button("") {
                     self.showModal = false
                     self.selectedPeriodRange = model.type
+                    viewModel.fetchArticles(withRange: selectedPeriodRange.rawValue)
                 }
                 ArticlePeriodRow(model: model)
             }
         }
-        .navigationTitle("Sort By")
+        .navigationTitle("Select Time Period")
         .navigationBarItems(trailing:
                                 Button("Done") {
                                     self.presentationMode.wrappedValue.dismiss()

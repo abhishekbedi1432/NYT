@@ -9,9 +9,7 @@ import Foundation
 
 protocol ArticleListContract: ObservableObject {
     var articles: [Article] { get set }
-    func fetchArticles()
-    func fetchArticles(withRange: Int ) 
-
+    func fetchArticles(withRange: Int )
 }
 
 class ArticleListViewModel: ArticleListContract {
@@ -25,37 +23,19 @@ class ArticleListViewModel: ArticleListContract {
         self.networkManager = networkManager
     }
 
-    func fetchArticles() {}
-
-    func fetchArticles(withRange: Int = 1) {
-        let request = ArticleListRequest(baseUrl: NetworkConstants.host)
-        networkManager.sendRequest(request: request, completion: onCompletion)
+    func fetchArticles(withRange timePeriod: Int = 1) {
+        let request = ArticleListRequest(baseUrl: NetworkConstants.host, timePeriod: timePeriod)
         
-        
-//        networkManager.sendRequest(request: request) { [weak self] result in
-//            switch result {
-//                case .success(let articles):
-//                    DispatchQueue.main.async { [weak self] in
-//                        self?.articles = articles
-//                    }
-//                case .failure(let error):
-//                    print(error)
-//            }
-//
-//        }
-    }
-    
-    
-    private func onCompletion(result: Result<ArticleListResponse, Error>) {
-        
-        switch result {
-            case .success(let articles):
-                self.articles = articles.articles ?? []
-//                DispatchQueue.main.async { [weak self] in
-//                    self?.articles = articles.articles ?? []
-//                }
-            case .failure(let error):
-                print(error)
+        networkManager.processRequest(request: request, type: ArticleListResponse.self) { [weak self] result in
+            switch result {
+                case .success(let response):
+                    DispatchQueue.main.async { [weak self] in
+                        self?.articles = response.articles ?? []
+                    }
+                case .failure(let error):
+                    print(error)
+            }
+            
         }
     }
 }

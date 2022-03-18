@@ -31,17 +31,18 @@ struct ArticleListView<ViewModel>: View where ViewModel: ArticleListContract {
             .navigationTitle(Text(screenTitle))
             .listRowBackground(Color.clear)
             .listStyle(GroupedListStyle())
-            .navigationBarItems( trailing:
+            .navigationBarItems(trailing:
                                     Button(action: {self.showModal = true}) {
                 HStack(){
                     Text(selectedPeriodRange.value)
                     Image(systemName: "arrow.up.arrow.down")
-
                 }
                 
             }.sheet(isPresented: self.$showModal) {
                 NavigationView {
-                    ArticlePeriodView(selectedPeriodRange: self.$selectedPeriodRange, showModal: self.$showModal)
+                    ArticlePeriodView(selectedPeriodRange: self.$selectedPeriodRange,
+                                      showModal: self.$showModal,
+                                      viewModel: viewModel)
                 }
             }
             )

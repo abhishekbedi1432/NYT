@@ -9,10 +9,12 @@ import Foundation
 
 class ArticleListRequest: NetworkRequest {
     
-    var baseUrl: String
-    
-    init(baseUrl: String) {
+    private var baseUrl: String
+    private var timePeriod: Int
+
+    init(baseUrl: String, timePeriod: Int) {
         self.baseUrl = baseUrl
+        self.timePeriod = timePeriod
     }
     
     var urlRequest: URLRequest {
@@ -21,7 +23,7 @@ class ArticleListRequest: NetworkRequest {
         params["api-key"] = NetworkConstants.apiKey as AnyObject
         
         return URLRequest(baseURL: URL(string: baseUrl)!,
-                          path: "v2/mostviewed/all-sections/1.json",
+                          path: "v2/mostviewed/all-sections/\(timePeriod).json",
                           parameters: params)!
     }
 }
