@@ -11,6 +11,8 @@
 		3B1172EB27E545BE0004B00D /* Article+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1172EA27E545BE0004B00D /* Article+Date.swift */; };
 		3B1172F027E595B60004B00D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B1172EF27E595B60004B00D /* Localizable.strings */; };
 		3B1172F327E5A7620004B00D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1172F227E5A7620004B00D /* Constants.swift */; };
+		3B11736527E5B22F0004B00D /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B11736427E5B22F0004B00D /* ErrorView.swift */; };
+		3B11736727E5B9360004B00D /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B11736627E5B9360004B00D /* PlaceholderView.swift */; };
 		3B53B99927E3BD3A003F2A6E /* NYTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53B99827E3BD3A003F2A6E /* NYTApp.swift */; };
 		3B53B99D27E3BD3D003F2A6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B53B99C27E3BD3D003F2A6E /* Assets.xcassets */; };
 		3B53B9A027E3BD3D003F2A6E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B53B99F27E3BD3D003F2A6E /* Preview Assets.xcassets */; };
@@ -66,6 +68,8 @@
 		3B1172EA27E545BE0004B00D /* Article+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Article+Date.swift"; sourceTree = "<group>"; };
 		3B1172EF27E595B60004B00D /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		3B1172F227E5A7620004B00D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3B11736427E5B22F0004B00D /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		3B11736627E5B9360004B00D /* PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
 		3B53B99527E3BD3A003F2A6E /* NYT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B53B99827E3BD3A003F2A6E /* NYTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTApp.swift; sourceTree = "<group>"; };
 		3B53B99C27E3BD3D003F2A6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -246,6 +250,7 @@
 				3B53BA1827E4E5AF003F2A6E /* ArticleListPresentable.swift */,
 				3B53B9F527E454E9003F2A6E /* ArticleListView.swift */,
 				3B53B9F927E45693003F2A6E /* ArticleListCell.swift */,
+				3B11736427E5B22F0004B00D /* ErrorView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -344,6 +349,7 @@
 			isa = PBXGroup;
 			children = (
 				3B53B9FD27E466C8003F2A6E /* AsyncImageView.swift */,
+				3B11736627E5B9360004B00D /* PlaceholderView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -495,6 +501,7 @@
 				3B53B9F627E454E9003F2A6E /* ArticleListView.swift in Sources */,
 				3B53B9E227E3D78D003F2A6E /* NetworkRequest.swift in Sources */,
 				3B1172F327E5A7620004B00D /* Constants.swift in Sources */,
+				3B11736527E5B22F0004B00D /* ErrorView.swift in Sources */,
 				3B53B9FE27E466C8003F2A6E /* AsyncImageView.swift in Sources */,
 				3B53B9E027E3D767003F2A6E /* NetworkError.swift in Sources */,
 				3B53B9E927E3D8B5003F2A6E /* ArticleListRequest.swift in Sources */,
@@ -505,6 +512,7 @@
 				3B53B9C927E3C09B003F2A6E /* ArticleListViewModel.swift in Sources */,
 				3B53BA1D27E4EEC3003F2A6E /* NetworkContract.swift in Sources */,
 				3BA2346C27E5088E00F25454 /* ArticlePeriodRow.swift in Sources */,
+				3B11736727E5B9360004B00D /* PlaceholderView.swift in Sources */,
 				3B53BA1B27E4E90E003F2A6E /* Article+Extension.swift in Sources */,
 				3B53B9C727E3C044003F2A6E /* ArticleListResponse.swift in Sources */,
 				3BA2346D27E5088E00F25454 /* ArticlePeriodView.swift in Sources */,
