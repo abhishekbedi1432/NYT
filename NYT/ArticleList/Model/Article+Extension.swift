@@ -42,21 +42,23 @@ extension Article: ArticlePresentable {
         guard let publishedDate = publishedDate else {
             return ""
         }
-        return publishedDate.getFormattedDate()
+        return publishedDate.getFormattedDate() ?? ""
     }
 }
 
 
 private extension String {
-    func getFormattedDate(currentFormat: String = "YY-MM-DD",
-                          expectedFormat: String = "EEE, MMM d") -> String {
-        let dateFormatterGet = DateFormatter()
-        dateFormatterGet.dateFormat = currentFormat
+    
+    func getFormattedDate(currentFormat: String = "YYYY-MM-DD",
+                          expectedFormat: String = "EEE, MMM d") -> String? {
+        // EEE, MMM d
+        let formatter = DateFormatter()
+        formatter.dateFormat = currentFormat
+
+        let date = formatter.date(from: self) ?? Date()
         
-        let date : Date = dateFormatterGet.date(from: self) ?? Date()
-        
-        dateFormatterGet.dateFormat = expectedFormat
-        return dateFormatterGet.string(from: date)
+        formatter.dateFormat = expectedFormat
+        return formatter.string(from: date)
     }
     
 }
