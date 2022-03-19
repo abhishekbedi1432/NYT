@@ -8,7 +8,9 @@
 import Foundation
 
 extension Article {
+    
     var date: Date? {
+        
         let dateFormatterGet = DateFormatter()
         dateFormatterGet.dateFormat = Constants.serverDateFormat
         

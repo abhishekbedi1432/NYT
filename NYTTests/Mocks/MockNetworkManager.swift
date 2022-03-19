@@ -8,7 +8,7 @@
 import Foundation
 @testable import NYT
 
-class MockNetworkManager: NetworkContract {
+class MockNetworkManager: NetworkManager {
     
     private var mockFile: String
     
@@ -16,7 +16,7 @@ class MockNetworkManager: NetworkContract {
         self.mockFile = mockFile
     }
     
-    func processRequest<T>(request: NetworkRequest, type: T.Type, completion: @escaping (Result<T, Error>) -> Void) where T : Decodable, T : Encodable {
+    override func processRequest<T>(request: NetworkRequest, type: T.Type, completion: @escaping (Result<T, Error>) -> Void) where T : Decodable, T : Encodable {
         let bundle = Bundle(for: MockNetworkManager.self)
         
         guard let filePath = bundle.path(forResource: mockFile, ofType: "json"),

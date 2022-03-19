@@ -34,8 +34,5 @@ class ArticleListTests: UITestCase {
             .waitForTitleToBeVisible()
             .tapOnFirstArticle()
     }
-    
-    
-    
 
 }

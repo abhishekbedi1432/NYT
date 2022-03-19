@@ -23,8 +23,8 @@ class ArticleTests: XCTestCase {
         
         let expectedImageLastPath = "09cli-shackleton-handout2-thumbStandard.jpg"
         let expectedBannerImageLastPath = "09cli-shackleton-handout2-mediumThreeByTwo440.jpg"
-        let expectedDate = "Mar 17, 2022"
-        let expectedFormattedDate = "3/17/2022"
+        let expectedDate = "Jan 17, 2022"
+        let expectedFormattedDate = "1/17/2022"
 
         // When
         let article = try XCTUnwrap(getDummyArticleWithNotNilValues())

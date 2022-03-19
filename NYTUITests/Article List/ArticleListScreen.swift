@@ -27,6 +27,7 @@ struct ArticleListScreen: Screen {
         return self
     }
     
+    @discardableResult
     func tapOnFirstArticle() -> ArticleDetailScreen {
         let firstCell = app.cells.firstMatch
         firstCell.tap()
@@ -38,14 +39,7 @@ struct ArticleListScreen: Screen {
         XCTAssertTrue(app.cells.count > 0)
         return self
     }
-    
-//    @discardableResult
-//    func verifyIfLastCellIsVisible() -> Self {
-//        let cellCount = app.cells.count
-//        let lastCellIndex = cellCount - 1
-//        return self
-//    }
-    
+        
     @discardableResult
     func scrollTheList() -> Self {
         app.swipeUp()

@@ -9,14 +9,17 @@ import XCTest
 @testable import NYT
 
 class NetworkRequestTests: XCTestCase {
-
-    func test_requestUrl() throws {
+    
+    var request: NetworkRequest!
+    
+    override func setUpWithError() throws {
+        request = ArticleListRequest(timePeriod: 5)
+    }
+    
+    func testRequestUrl() throws {
         
         // Given
-        let baseURL = "https://dummy.com"
-        let request = ArticleListRequest(baseUrl: baseURL, timePeriod: 5, apiKey: "dummyKey")
-        
-        let expectedUrlString = "https://dummy.com/v2/mostviewed/all-sections/5.json?api-key=dummyKey"
+        let expectedUrlString = "https://api.nytimes.com/svc/mostpopular/v2/mostviewed/all-sections/5.json?api-key=7AP916lfRg6y1NCiz6kqyqH1v9CIB3ah"
         
         // When
         let absoluteString = try? XCTUnwrap(request.urlRequest?.url?.absoluteString)
@@ -25,28 +28,27 @@ class NetworkRequestTests: XCTestCase {
         XCTAssertEqual(absoluteString, expectedUrlString)
     }
     
-    func test_requestUrl_with_incorrect_baseUrl() throws {
-        
+    func testRequestHeaderParams() throws {
         // Given
-        let baseURL = ""
-        
+        let expectedHeaderParams = 1
         // When
-        let request = ArticleListRequest(baseUrl: baseURL, timePeriod: 5, apiKey: "dummyKey")
-        
+        let requestHeader = request.headerParams
         // Then
-        XCTAssertNil(request.urlRequest)
+        XCTAssertEqual(requestHeader.count, expectedHeaderParams)
     }
     
+    func testRequestHeadersValues() throws {
+        
+        let headerValue = try XCTUnwrap(request.headerParams.first?.value)
+        XCTAssertNotNil(headerValue)
+    }
     
-    func test_requestUrl_without_params() throws {
-        
-        // Given
-        let baseURL = URL(string: "www.abc.com")!
-        
-        // When
-        let request = URLRequest(baseURL: baseURL, path: nil, parameters: nil)
-        
-        // Then
-        XCTAssertEqual(request?.url, baseURL)
+    func testRequestAPIKeys() throws {
+        let apiKey = request.apiKey
+        XCTAssertEqual(NetworkConstants.apiKey, apiKey)
+    }
+    
+    override func tearDownWithError() throws {
+        request = nil
     }
 }

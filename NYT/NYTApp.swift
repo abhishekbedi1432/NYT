@@ -11,9 +11,7 @@ import SwiftUI
 struct NYTApp: App {
     var body: some Scene {
         WindowGroup {
-//            ArticleListView(viewModel: ArticleListViewModel())
-            
-            ArticleLoaderView(viewModel: ArticleLoaderViewModel())
+            ArticleListView(viewModel: ArticleListViewModel())
         }
     }
 }

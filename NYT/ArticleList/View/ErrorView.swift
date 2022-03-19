@@ -11,6 +11,7 @@ struct ErrorView: View {
     let error: Error
     let retryAction: () -> Void
     
+    // MARK: Constants
     private struct Constants {
         static let bottomPadding: CGFloat = 40
     }
