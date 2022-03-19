@@ -22,27 +22,23 @@ struct ArticleListResponse: Codable {
 // MARK: - Article
 struct Article: Codable, Identifiable {    
     
-    let id, assetID: Int?
-    let source, publishedDate, byline, type: String?
+    let id: Int?
+    let publishedDate, byline: String?
     let title, abstract: String?
     let media: [Media]?
     
     enum CodingKeys: String, CodingKey {
         case id
-        case assetID = "asset_id"
-        case source
         case publishedDate = "published_date"
-        case byline, type, title, abstract, media
+        case byline, title, abstract, media
     }
 }
 
 // MARK: - Media
 struct Media: Codable {
-    let type, subtype, caption: String?
     let mediaMetadata: [MediaMetadatum]?
     
     enum CodingKeys: String, CodingKey {
-        case type, subtype, caption
         case mediaMetadata = "media-metadata"
     }
 }
@@ -51,5 +47,4 @@ struct Media: Codable {
 struct MediaMetadatum: Codable {
     let url: String?
     let format: String?
-    let height, width: Int?
 }

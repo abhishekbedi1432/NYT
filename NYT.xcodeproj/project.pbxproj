@@ -14,6 +14,9 @@
 		3B11736527E5B22F0004B00D /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B11736427E5B22F0004B00D /* ErrorView.swift */; };
 		3B11736727E5B9360004B00D /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B11736627E5B9360004B00D /* PlaceholderView.swift */; };
 		3B11736A27E5CAC30004B00D /* NetworkRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B11736927E5CAC30004B00D /* NetworkRequestTests.swift */; };
+		3B11737127E5E3E00004B00D /* ArticleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B11737027E5E3E00004B00D /* ArticleTests.swift */; };
+		3B11737427E5E4D10004B00D /* JsonUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B11737327E5E4D10004B00D /* JsonUtility.swift */; };
+		3B11737627E5F82D0004B00D /* nyt_article_with_incorrect_published_dateformat.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B11737527E5F82D0004B00D /* nyt_article_with_incorrect_published_dateformat.json */; };
 		3B53B99927E3BD3A003F2A6E /* NYTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53B99827E3BD3A003F2A6E /* NYTApp.swift */; };
 		3B53B99D27E3BD3D003F2A6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B53B99C27E3BD3D003F2A6E /* Assets.xcassets */; };
 		3B53B9A027E3BD3D003F2A6E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B53B99F27E3BD3D003F2A6E /* Preview Assets.xcassets */; };
@@ -72,6 +75,9 @@
 		3B11736427E5B22F0004B00D /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		3B11736627E5B9360004B00D /* PlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
 		3B11736927E5CAC30004B00D /* NetworkRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestTests.swift; sourceTree = "<group>"; };
+		3B11737027E5E3E00004B00D /* ArticleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTests.swift; sourceTree = "<group>"; };
+		3B11737327E5E4D10004B00D /* JsonUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonUtility.swift; sourceTree = "<group>"; };
+		3B11737527E5F82D0004B00D /* nyt_article_with_incorrect_published_dateformat.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = nyt_article_with_incorrect_published_dateformat.json; sourceTree = "<group>"; };
 		3B53B99527E3BD3A003F2A6E /* NYT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B53B99827E3BD3A003F2A6E /* NYTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTApp.swift; sourceTree = "<group>"; };
 		3B53B99C27E3BD3D003F2A6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -158,6 +164,22 @@
 			path = "Network Tests";
 			sourceTree = "<group>";
 		};
+		3B11736F27E5E3C90004B00D /* Article Tests */ = {
+			isa = PBXGroup;
+			children = (
+				3B11737027E5E3E00004B00D /* ArticleTests.swift */,
+			);
+			path = "Article Tests";
+			sourceTree = "<group>";
+		};
+		3B11737227E5E4C10004B00D /* Json Utility */ = {
+			isa = PBXGroup;
+			children = (
+				3B11737327E5E4D10004B00D /* JsonUtility.swift */,
+			);
+			path = "Json Utility";
+			sourceTree = "<group>";
+		};
 		3B53B98C27E3BD3A003F2A6E = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +230,8 @@
 		3B53B9A827E3BD3D003F2A6E /* NYTTests */ = {
 			isa = PBXGroup;
 			children = (
+				3B11737227E5E4C10004B00D /* Json Utility */,
+				3B11736F27E5E3C90004B00D /* Article Tests */,
 				3B11736827E5CAAB0004B00D /* Network Tests */,
 				3B53BA0C27E48C70003F2A6E /* Article List Tests */,
 				3B53BA0927E48C2F003F2A6E /* Mocks */,
@@ -342,6 +366,7 @@
 			children = (
 				3B53BA1627E4A323003F2A6E /* nyt_error_response.json */,
 				3B53BA1427E49189003F2A6E /* nyt_popular_response.json */,
+				3B11737527E5F82D0004B00D /* nyt_article_with_incorrect_published_dateformat.json */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -487,6 +512,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B53BA1527E49189003F2A6E /* nyt_popular_response.json in Resources */,
+				3B11737627E5F82D0004B00D /* nyt_article_with_incorrect_published_dateformat.json in Resources */,
 				3B53BA1727E4A323003F2A6E /* nyt_error_response.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -537,7 +563,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B11737427E5E4D10004B00D /* JsonUtility.swift in Sources */,
 				3B53BA0E27E48CB3003F2A6E /* ArticleListTests.swift in Sources */,
+				3B11737127E5E3E00004B00D /* ArticleTests.swift in Sources */,
 				3B53BA0B27E48C40003F2A6E /* MockNetworkManager.swift in Sources */,
 				3B11736A27E5CAC30004B00D /* NetworkRequestTests.swift in Sources */,
 				3B53B9AA27E3BD3D003F2A6E /* NYTTests.swift in Sources */,

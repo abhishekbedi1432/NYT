@@ -67,10 +67,10 @@ struct ArticleListCell_Previews: PreviewProvider {
     
     static var dummyArticle: Article {
         
-        let mediaMetaDatum:[MediaMetadatum] = [MediaMetadatum(url: "https://static01.nyt.com/images/2022/03/09/world/09cli-shackleton-handout2/09cli-shackleton-handout2-thumbStandard.jpg", format: "mediumThreeByTwo440", height: 75, width: 75)]
+        let mediaMetaDatum:[MediaMetadatum] = [MediaMetadatum(url: "https://static01.nyt.com/images/2022/03/09/world/09cli-shackleton-handout2/09cli-shackleton-handout2-thumbStandard.jpg", format: "mediumThreeByTwo440")]
         
-        let media:[Media] = [Media(type: nil, subtype: nil, caption: nil, mediaMetadata: mediaMetaDatum)]
+        let media: [Media] = [Media(mediaMetadata: mediaMetaDatum)]
         
-        return Article(id: 1, assetID: 123, source: "NYT", publishedDate: "Today", byline: "AUTHOR --- Dummy  ssfkskjessfkskjessfkskjessfkskjessfkskje", type: "Feed", title: "Dummy Articlddddddddddddddddddd ssookokodfjkjskdjfksjkjksdjfksjdkfjskdjfkskje sdfjksjdfksjdkfjsdlk", abstract: "This is a dummy article", media: media)
+        return Article(id: 1, publishedDate: "Today", byline: "AUTHOR --- Dummy  ssfkskjessfkskjessfkskjessfkskjessfkskje", title: "Dummy Articlddddddddddddddddddd ssookokodfjkjskdjfksjkjksdjfksjdkfjskdjfkskje sdfjksjdfksjdkfjsdlk", abstract: "This is a dummy article", media: media)
     }
 }
