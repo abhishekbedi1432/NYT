@@ -16,8 +16,7 @@ class MockNetworkManager: NetworkContract {
         self.mockFile = mockFile
     }
     
-    func sendRequest<T>(request: NetworkRequest, completion: @escaping (Result<T, Error>) -> Void) where T : Decodable, T : Encodable {
-        
+    func processRequest<T>(request: NetworkRequest, type: T.Type, completion: @escaping (Result<T, Error>) -> Void) where T : Decodable, T : Encodable {
         let bundle = Bundle(for: MockNetworkManager.self)
         
         guard let filePath = bundle.path(forResource: mockFile, ofType: "json"),
@@ -27,4 +26,5 @@ class MockNetworkManager: NetworkContract {
               }
         completion(.success(result))
     }
+    
 }

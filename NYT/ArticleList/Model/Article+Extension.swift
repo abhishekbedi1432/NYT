@@ -17,6 +17,7 @@ extension Article: ArticlePresentable {
     var author: String {
         byline ?? ""
     }
+    
     var headline: String {
         self.title ?? ""
     }

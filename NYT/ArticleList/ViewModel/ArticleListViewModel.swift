@@ -24,7 +24,7 @@ class ArticleListViewModel: ArticleListContract {
 
     func fetchArticles(withRange timePeriod: Int = 1) {
         
-        let request = ArticleListRequest(baseUrl: NetworkConstants.host, timePeriod: timePeriod)
+        let request = ArticleListRequest(baseUrl: NetworkConstants.host, timePeriod: timePeriod, apiKey: NetworkConstants.apiKey)
         
         networkManager.processRequest(request: request, type: ArticleListResponse.self) { [weak self] result in
             switch result {
@@ -61,7 +61,7 @@ class ArticleLoaderViewModel: ObservableObject {
     
     func fetchArticles() {
         state = .loading
-        let request = ArticleListRequest(baseUrl: NetworkConstants.host, timePeriod: timePeriod)
+        let request = ArticleListRequest(baseUrl: NetworkConstants.host, timePeriod: timePeriod, apiKey: NetworkConstants.apiKey)
         networkManager.processRequest(request: request, type: ArticleListResponse.self) { [weak self] result in
             switch result {
                 case .success(let response):

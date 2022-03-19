@@ -13,3 +13,7 @@ enum NetworkError: Error {
     case noData
 }
 
+enum URLRequestError: Error {
+    case invalidRequest
+}
+

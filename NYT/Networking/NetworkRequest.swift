@@ -8,5 +8,5 @@
 import Foundation
 
 protocol NetworkRequest {
-    var urlRequest: URLRequest { get }
+    var urlRequest: URLRequest? { get }
 }

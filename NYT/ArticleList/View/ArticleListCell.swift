@@ -16,6 +16,13 @@ struct ArticleListCell: View {
         static let imageWidth: CGFloat = 75
         static let imageHeight: CGFloat = 75
         static let spacing: CGFloat = 12
+
+        static let topPadding: CGFloat = 10
+        static let leadingPadding: CGFloat = 0
+        static let bottomPadding: CGFloat = 10
+        static let trailingPadding: CGFloat = 0
+        
+        static let lineLimit: Int = 2
     }
     
     var body: some View {
@@ -30,14 +37,14 @@ struct ArticleListCell: View {
             // MARK: Title / Subtitle
             VStack(alignment: .leading) {
                 Text(article.headline).font(.caption)
-                    .lineLimit(2)
+                    .lineLimit(Constants.lineLimit)
                     .padding(.bottom, 5.0)
                 
                 HStack(alignment: .center){
                     Text(article.author)
                         .font(.caption2)
                         .foregroundColor(.gray)
-                        .lineLimit(2)
+                        .lineLimit(Constants.lineLimit)
                     HStack() {
                         Spacer()
                         Image(systemName: "calendar")
@@ -48,7 +55,7 @@ struct ArticleListCell: View {
                 }
             }
             Spacer()
-        }.padding(.init(top: 10, leading: 0, bottom: 10, trailing: 0))
+        }.padding(.init(top: Constants.topPadding, leading: Constants.leadingPadding, bottom: Constants.bottomPadding, trailing: Constants.trailingPadding))
     }
 }
 
