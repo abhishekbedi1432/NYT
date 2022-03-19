@@ -29,6 +29,7 @@
 		3B11739627E628460004B00D /* URLSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B11739527E628460004B00D /* URLSessionTests.swift */; };
 		3B11739827E628D90004B00D /* MockNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B11739727E628D90004B00D /* MockNetworkRequest.swift */; };
 		3B11739A27E64A510004B00D /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B11739927E64A510004B00D /* Screen.swift */; };
+		3B1173A227E661520004B00D /* NYT.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3B1173A127E661520004B00D /* NYT.mp4 */; };
 		3B53B99927E3BD3A003F2A6E /* NYTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53B99827E3BD3A003F2A6E /* NYTApp.swift */; };
 		3B53B99D27E3BD3D003F2A6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B53B99C27E3BD3D003F2A6E /* Assets.xcassets */; };
 		3B53B9A027E3BD3D003F2A6E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B53B99F27E3BD3D003F2A6E /* Preview Assets.xcassets */; };
@@ -102,6 +103,7 @@
 		3B11739927E64A510004B00D /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		3B11739F27E65A110004B00D /* ArticleList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ArticleList.png; sourceTree = "<group>"; };
 		3B1173A027E65A110004B00D /* ArticleDetails.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ArticleDetails.png; sourceTree = "<group>"; };
+		3B1173A127E661520004B00D /* NYT.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = NYT.mp4; sourceTree = "<group>"; };
 		3B53B99527E3BD3A003F2A6E /* NYT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B53B99827E3BD3A003F2A6E /* NYTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTApp.swift; sourceTree = "<group>"; };
 		3B53B99C27E3BD3D003F2A6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 		3B11739E27E65A110004B00D /* Screenshots */ = {
 			isa = PBXGroup;
 			children = (
+				3B1173A127E661520004B00D /* NYT.mp4 */,
 				3B11739F27E65A110004B00D /* ArticleList.png */,
 				3B1173A027E65A110004B00D /* ArticleDetails.png */,
 			);
@@ -610,6 +613,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B1173A227E661520004B00D /* NYT.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
