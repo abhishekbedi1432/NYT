@@ -57,7 +57,6 @@
 		3BA2346C27E5088E00F25454 /* ArticlePeriodRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA2346927E5088E00F25454 /* ArticlePeriodRow.swift */; };
 		3BA2346D27E5088E00F25454 /* ArticlePeriodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA2346A27E5088E00F25454 /* ArticlePeriodView.swift */; };
 		3BA2346E27E5088E00F25454 /* ArticlePeriodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA2346B27E5088E00F25454 /* ArticlePeriodViewModel.swift */; };
-		3BA2347427E51E4100F25454 /* Shimmer in Frameworks */ = {isa = PBXBuildFile; productRef = 3BA2347327E51E4100F25454 /* Shimmer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,7 +138,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BA2347427E51E4100F25454 /* Shimmer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,7 +475,6 @@
 			);
 			name = NYT;
 			packageProductDependencies = (
-				3BA2347327E51E4100F25454 /* Shimmer */,
 			);
 			productName = NYT;
 			productReference = 3B53B99527E3BD3A003F2A6E /* NYT.app */;
@@ -552,7 +549,6 @@
 			);
 			mainGroup = 3B53B98C27E3BD3A003F2A6E;
 			packageReferences = (
-				3BA2347227E51E4100F25454 /* XCRemoteSwiftPackageReference "Shimmer" */,
 			);
 			productRefGroup = 3B53B99627E3BD3A003F2A6E /* Products */;
 			projectDirPath = "";
@@ -971,25 +967,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		3BA2347227E51E4100F25454 /* XCRemoteSwiftPackageReference "Shimmer" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/joshuajhomann/Shimmer";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		3BA2347327E51E4100F25454 /* Shimmer */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3BA2347227E51E4100F25454 /* XCRemoteSwiftPackageReference "Shimmer" */;
-			productName = Shimmer;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3B53B98D27E3BD3A003F2A6E /* Project object */;
 }
