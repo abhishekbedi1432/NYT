@@ -29,7 +29,17 @@ struct ArticleListScreen: Screen {
         XCTAssertTrue(app.cells.count > 0)
         return self
     }
+    
+    @discardableResult
+    func verifyIfFirstCellHasContent() -> Self {
+        XCTAssertTrue(app.cells.count > 0)
         
+        let cell = app.cells.firstMatch
+        XCTAssertFalse(cell.label.isEmpty)
+        
+        return self
+    }
+    
     @discardableResult
     func scrollTheList() -> Self {
         app.swipeUp()

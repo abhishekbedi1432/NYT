@@ -9,19 +9,25 @@ import XCTest
 
 class ArticleListTests: UITestCase {
 
-    func test_NavigationTitle_is_Visible() {
+    func test_navigationTitle_is_Visible() {
         ArticleListScreen(app: app)
             .waitForTitleToBeVisible()
             .verifyTitle("NY Times Articles")
     }
     
-    func test_Articles_have_loaded() {
+    func test_articles_have_loaded() {
         ArticleListScreen(app: app)
             .waitForTitleToBeVisible()
             .verifyIfArticlesAreLoaded()
     }
     
-    func test_List_is_scrollable() {
+    func test_article_have_content() {
+        ArticleListScreen(app: app)
+            .waitForTitleToBeVisible()
+            .verifyIfFirstCellHasContent()
+    }
+    
+    func test_articleList_is_scrollable() {
         ArticleListScreen(app: app)
             .waitForTitleToBeVisible()
             .scrollUp()
