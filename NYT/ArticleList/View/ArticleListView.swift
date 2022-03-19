@@ -67,7 +67,7 @@ struct ArticleListView_Previews: PreviewProvider {
     }
 }
 
-struct ArticleView: View {
+struct ArticleLoaderView: View {
     @ObservedObject var viewModel: ArticleLoaderViewModel
     @State var selectedPeriodRange: ArticlePeriodOption = .daily
     var body: some View {

@@ -13,7 +13,7 @@ struct NYTApp: App {
         WindowGroup {
 //            ArticleListView(viewModel: ArticleListViewModel())
             
-            ArticleView(viewModel: ArticleLoaderViewModel())
+            ArticleLoaderView(viewModel: ArticleLoaderViewModel())
         }
     }
 }

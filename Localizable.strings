@@ -8,3 +8,5 @@
 "article_screen_title" = "NY Times Articles";
 "select_time_period" = "Select Time Period";
 "done" = "Done";
+"an_error_occured" = "An Error Occured";
+"retry" = "Retry";
