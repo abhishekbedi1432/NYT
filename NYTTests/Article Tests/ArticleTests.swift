@@ -107,8 +107,6 @@ class ArticleTests: XCTestCase {
         //Then
         XCTAssertEqual(article?.formattedDate, emptyString)
     }
-
-        
 }
 
 
