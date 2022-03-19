@@ -27,6 +27,12 @@ struct ArticleListScreen: Screen {
         return self
     }
     
+    func tapOnFirstArticle() -> ArticleDetailScreen {
+        let firstCell = app.cells.firstMatch
+        firstCell.tap()
+        return ArticleDetailScreen(app: app)
+    }
+    
     @discardableResult
     func verifyIfArticlesAreLoaded() -> Self {
         XCTAssertTrue(app.cells.count > 0)
@@ -54,16 +60,5 @@ struct ArticleListScreen: Screen {
     
     private var navigationBar: XCUIElement {
         app.navigationBars.firstMatch
-    }
-}
-
-
-extension XCTestCase {
-    func wait(element: XCUIElement, duration: TimeInterval) {
-        let predicate = NSPredicate(format: "exists == true")
-        let _ = expectation(for: predicate, evaluatedWith: element, handler: nil)
-        
-        // We use a buffer here to avoid flakiness with Timer on CI
-        waitForExpectations(timeout: duration + 0.5)
     }
 }

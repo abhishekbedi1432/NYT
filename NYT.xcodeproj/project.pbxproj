@@ -22,6 +22,8 @@
 		3B11738027E614150004B00D /* ArticleListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B11737F27E614150004B00D /* ArticleListTests.swift */; };
 		3B11738327E616F50004B00D /* ArticleListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B11738227E616F50004B00D /* ArticleListScreen.swift */; };
 		3B11738727E619FF0004B00D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B11738627E619FF0004B00D /* Constants.swift */; };
+		3B11738A27E6227C0004B00D /* XCTestCase+WaitExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B11738927E6227C0004B00D /* XCTestCase+WaitExtension.swift */; };
+		3B11738C27E623560004B00D /* ArticleDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B11738B27E623560004B00D /* ArticleDetailScreen.swift */; };
 		3B53B99927E3BD3A003F2A6E /* NYTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53B99827E3BD3A003F2A6E /* NYTApp.swift */; };
 		3B53B99D27E3BD3D003F2A6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B53B99C27E3BD3D003F2A6E /* Assets.xcassets */; };
 		3B53B9A027E3BD3D003F2A6E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B53B99F27E3BD3D003F2A6E /* Preview Assets.xcassets */; };
@@ -88,6 +90,8 @@
 		3B11737F27E614150004B00D /* ArticleListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListTests.swift; sourceTree = "<group>"; };
 		3B11738227E616F50004B00D /* ArticleListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListScreen.swift; sourceTree = "<group>"; };
 		3B11738627E619FF0004B00D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3B11738927E6227C0004B00D /* XCTestCase+WaitExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+WaitExtension.swift"; sourceTree = "<group>"; };
+		3B11738B27E623560004B00D /* ArticleDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailScreen.swift; sourceTree = "<group>"; };
 		3B53B99527E3BD3A003F2A6E /* NYT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B53B99827E3BD3A003F2A6E /* NYTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTApp.swift; sourceTree = "<group>"; };
 		3B53B99C27E3BD3D003F2A6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -211,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				3B11738227E616F50004B00D /* ArticleListScreen.swift */,
+				3B11738B27E623560004B00D /* ArticleDetailScreen.swift */,
 				3B11737F27E614150004B00D /* ArticleListTests.swift */,
 			);
 			path = "Article List";
@@ -222,6 +227,14 @@
 				3B11738627E619FF0004B00D /* Constants.swift */,
 			);
 			path = Constansts;
+			sourceTree = "<group>";
+		};
+		3B11738827E6225A0004B00D /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				3B11738927E6227C0004B00D /* XCTestCase+WaitExtension.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		3B53B98C27E3BD3A003F2A6E = {
@@ -287,6 +300,7 @@
 		3B53B9B227E3BD3D003F2A6E /* NYTUITests */ = {
 			isa = PBXGroup;
 			children = (
+				3B11738827E6225A0004B00D /* Utilities */,
 				3B11738127E6144B0004B00D /* Protocol */,
 				3B53B9B327E3BD3D003F2A6E /* NYTUITests.swift */,
 				3B53B9B527E3BD3D003F2A6E /* NYTUITestsLaunchTests.swift */,
@@ -627,7 +641,9 @@
 				3B11738027E614150004B00D /* ArticleListTests.swift in Sources */,
 				3B53B9B627E3BD3D003F2A6E /* NYTUITestsLaunchTests.swift in Sources */,
 				3B53B9B427E3BD3D003F2A6E /* NYTUITests.swift in Sources */,
+				3B11738C27E623560004B00D /* ArticleDetailScreen.swift in Sources */,
 				3B11737E27E613B80004B00D /* UITestCase.swift in Sources */,
+				3B11738A27E6227C0004B00D /* XCTestCase+WaitExtension.swift in Sources */,
 				3B11738327E616F50004B00D /* ArticleListScreen.swift in Sources */,
 				3B11738727E619FF0004B00D /* Constants.swift in Sources */,
 			);

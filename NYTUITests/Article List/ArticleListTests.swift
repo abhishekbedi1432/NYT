@@ -9,7 +9,6 @@ import XCTest
 
 class ArticleListTests: UITestCase {
 
-    
     func test_navigationTitle_is_Visible() {
         ArticleListScreen(app: app)
             .waitForTitleToBeVisible()
@@ -29,6 +28,14 @@ class ArticleListTests: UITestCase {
             .scrollTheList()
             .verifyIfArticlesAreLoaded()
     }
+    
+    func testArticleDetailIsVisible() {
+        ArticleListScreen(app: app)
+            .waitForTitleToBeVisible()
+            .tapOnFirstArticle()
+    }
+    
+    
     
 
 }
