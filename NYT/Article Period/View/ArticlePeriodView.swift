@@ -1,3 +1,9 @@
+//
+//  ArticlePeriodModel.swift
+//  NYT
+//
+//  Created by kbedi on 20/03/2022.
+//
 
 import SwiftUI
 
@@ -17,7 +23,6 @@ struct ArticlePeriodView<ViewModel>: View where ViewModel: ArticleListViewModel 
                     self.showModal = false
                     self.selectedPeriodRange = model.type
                     viewModel.timePeriod = selectedPeriodRange.rawValue
-                    //                    viewModel.fetchArticles(timePeriod: selectedPeriodRange.rawValue)
                 }
                 ArticlePeriodRow(model: model)
             }

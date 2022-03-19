@@ -24,8 +24,8 @@ struct ArticleListView: View {
             case .failed(let error):
                 ErrorView(error: error, retryAction: viewModel.fetchArticles)
                 
-            case .loaded(let articles):
-                ListView(articles: articles, viewModel: viewModel)
+            case .loaded:
+                ListView(viewModel: viewModel)
         }
     }
 }
@@ -35,23 +35,33 @@ struct ListView: View {
     
     private let screenTitle = LocalizedStringKey("article_screen_title")
     
-    var articles: [Article]
-    
     @ObservedObject var viewModel: ArticleListViewModel
     
     @State private var showModal: Bool = false
     @State var selectedPeriodRange: ArticlePeriodOption = .daily
-    //    @State var selectedPeriodRange: ArticlePeriodOption = .daily
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(articles) { article in
+                ForEach(viewModel.articles) { article in
                     NavigationLink(destination: articleDetailsView(for: article)) {
                         ArticleListCell(article: article)
                     }
                 }
             }
+            .navigationBarItems(trailing: HStack {
+                Button(action: {self.showModal = true}) {
+                    HStack(alignment: .center) {
+                        Text(self.selectedPeriodRange.value)
+                        Image(systemName: "clock.arrow.2.circlepath")
+                            .padding(.leading, 10.0)
+                    }
+                }
+            }.sheet(isPresented: self.$showModal) {
+                NavigationView {
+                    ArticlePeriodView(selectedPeriodRange: self.$selectedPeriodRange, showModal: self.$showModal, viewModel: viewModel)
+                }
+            })
             .navigationTitle(Text(screenTitle))
             .listRowBackground(Color.clear)
             .listStyle(GroupedListStyle())

@@ -1,23 +1,11 @@
-
+//
+//  ArticlePeriodModel.swift
+//  NYT
+//
+//  Created by kbedi on 20/03/2022.
+//
 
 import Foundation
-
-enum ArticlePeriodOption: Int, CaseIterable {
-    case daily =  1
-    case weekly = 7
-    case monthly = 30
-    
-    var value: String {
-        switch self {
-            case .daily:
-                return "Today"
-            case .weekly:
-                return "Weekly"
-            case .monthly:
-                return "Monthly"
-        }
-    }
-}
 
 protocol ArticlePeriodOptionSortable {
     func articleOptions() -> [ArticlePeriodModel]
@@ -35,8 +23,3 @@ struct ArticlePeriodViewModel {
     }
 }
 
-struct ArticlePeriodModel {
-    var id: Int
-    var title: String
-    var type: ArticlePeriodOption
-}

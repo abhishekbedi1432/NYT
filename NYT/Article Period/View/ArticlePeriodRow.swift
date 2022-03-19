@@ -1,3 +1,9 @@
+//
+//  ArticlePeriodModel.swift
+//  NYT
+//
+//  Created by kbedi on 20/03/2022.
+//
 
 import SwiftUI
 
