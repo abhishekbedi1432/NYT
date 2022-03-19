@@ -11,12 +11,10 @@ import XCTest
 
 class NetworkRequestTests: XCTestCase {
 
-    var request: ArticleListRequest!
+    var request: ArticleListRequest?
     
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        let baseURL = "https://dummy.com"
-        request = ArticleListRequest(baseUrl: baseURL, timePeriod: 5, apiKey: "dummyKey")
     }
 
     override func tearDownWithError() throws {
@@ -24,15 +22,30 @@ class NetworkRequestTests: XCTestCase {
         request = nil
     }
 
-    func testRequestUrl() throws {
+    func test_requestUrl() throws {
         
         // Given
+        let baseURL = "https://dummy.com"
+        request = ArticleListRequest(baseUrl: baseURL, timePeriod: 5, apiKey: "dummyKey")
+        
         let expectedUrlString = "https://dummy.com/v2/mostviewed/all-sections/5.json?api-key=dummyKey"
         
         // When
-        let absoluteString = try? XCTUnwrap(request.urlRequest?.url?.absoluteString)
+        let absoluteString = try? XCTUnwrap(request?.urlRequest?.url?.absoluteString)
         
         // Then
         XCTAssertEqual(absoluteString, expectedUrlString)
+    }
+    
+    func test_requestUrl_with_incorrect_baseUrl() throws {
+        
+        // Given
+        let baseURL = ""
+        
+        // When
+        request = ArticleListRequest(baseUrl: baseURL, timePeriod: 5, apiKey: "dummyKey")
+        
+        // Then
+        XCTAssertNil(request?.urlRequest)
     }
 }
