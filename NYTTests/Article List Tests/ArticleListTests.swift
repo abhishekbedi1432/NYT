@@ -10,16 +10,27 @@ import XCTest
 
 class ArticleListTests: XCTestCase {
 
-    var sut: ArticleListViewModel!
+    var viewModel: ArticleListViewModel!
     
     override func setUpWithError() throws {
 
         let mockNetworkManager = MockNetworkManager(withMockFile: "nyt_popular_response")
-        sut = ArticleListViewModel(networkManager: mockNetworkManager)
+        viewModel = ArticleListViewModel(networkManager: mockNetworkManager)
     }
 
     override func tearDownWithError() throws {
-        sut = nil
+        viewModel = nil
     }
-
+    
+    func test_article_response_failure() {
+        let mockNetworkManager = MockNetworkManager(withMockFile: "nyt_error_response")
+        viewModel = ArticleListViewModel(networkManager: mockNetworkManager)
+        
+        // When
+        viewModel.fetchArticles()
+        
+        // Then
+        XCTAssertTrue(viewModel.articles.isEmpty)
+    }
+    
 }
