@@ -69,6 +69,9 @@ class ArticleLoaderViewModel: ObservableObject {
                         if let articles = response.articles?.sortedByDate {
                             self?.state = !articles.isEmpty ? .loaded(articles) : .failed(NetworkError.noData)
                         }
+                        else {
+                            self?.state = .failed(NetworkError.noData)
+                        }
                     }
                 case .failure(let error):
                     self?.state = .failed(error)
