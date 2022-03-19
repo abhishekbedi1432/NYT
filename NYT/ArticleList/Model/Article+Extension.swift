@@ -10,8 +10,6 @@ import Foundation
 fileprivate extension String {
     static let thumbnail = "Standard Thumbnail"
     static let banner = "mediumThreeByTwo440"
-    static let serverFormat = "YYYY-MM-DD"
-    static let userFriendlyFormat = "EEE, MMM d"
 }
 
 extension Article: ArticlePresentable {
@@ -56,16 +54,16 @@ extension Article: ArticlePresentable {
 
 private extension String {
     
-    func getFormattedDate(currentFormat: String = .serverFormat,
-                          expectedFormat: String = .userFriendlyFormat) -> String? {
-        // EEE, MMM d
+    func getFormattedDate(currentFormat: String = Constants.serverDateFormat) -> String? {
+        
         let formatter = DateFormatter()
         formatter.dateFormat = currentFormat
 
-        let date = formatter.date(from: self) ?? Date()
+        if let date = formatter.date(from: self) {
+            formatter.dateStyle = .medium
+            return formatter.string(from: date)
+        }
         
-        formatter.dateFormat = expectedFormat
-        return formatter.string(from: date)
+        return nil
     }
-    
 }

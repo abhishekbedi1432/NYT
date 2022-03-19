@@ -38,6 +38,7 @@ struct ArticleDetailView_Previews: PreviewProvider {
             formattedDate: "2022-03-18",
             author: "Author Author Author Author Author Author",
             content: "Abstract", imageUrl: url)
+        
         ArticleDetailView(viewModel: viewModel)
     }
 }

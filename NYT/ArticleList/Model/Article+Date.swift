@@ -10,7 +10,7 @@ import Foundation
 extension Article {
     var date: Date? {
         let dateFormatterGet = DateFormatter()
-        dateFormatterGet.dateFormat = "YY-MM-DD"
+        dateFormatterGet.dateFormat = Constants.serverDateFormat
         
         guard let publishedDate = publishedDate,
               let date = dateFormatterGet.date(from: publishedDate) else {
@@ -24,7 +24,13 @@ extension Array where Element == Article {
     
     var sortedByDate: [Article] {
         return self.sorted { firstArticle, secondArticle in
-            return firstArticle.date ?? Date() > secondArticle.date ?? Date()
+            
+            guard let firstDate = firstArticle.date,
+                  let secondDate = secondArticle.date else {
+                      return false
+                  }
+            
+            return firstDate > secondDate
         }
     }
 }

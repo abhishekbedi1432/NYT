@@ -12,7 +12,7 @@ struct ArticleListCell: View {
     var article: ArticlePresentable
     
     // MARK: Constants
-    struct Constants {
+    private struct Constants {
         static let imageWidth: CGFloat = 75
         static let imageHeight: CGFloat = 75
         static let spacing: CGFloat = 12
