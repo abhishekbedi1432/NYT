@@ -41,6 +41,73 @@
           ]
         }
       ]
-    }
+    },
+    {
+        "uri": "nyt://article/a9452681-0485-50bc-8985-8528900cb409",
+        "url": "https://www.nytimes.com/2022/03/11/us/politics/putin-yacht-russia-ukraine.html",
+        "id": 100000008249002,
+        "asset_id": 100000008249002,
+        "source": "New York Times",
+        "published_date": "2022-03-11",
+        "byline": "By Natasha",
+        "updated": "2022-03-13 16:21:32",
+        "section": "U.S.",
+        "subsection": "Politics",
+        "nytdsection": "u.s.",
+        "adx_keywords": "Russian Invasion of Ukraine (2022);Embargoes and Sanctions;Assets, Frozen;Boats and Boating;United States International Relations;Putin, Vladimir V;Treasury Department;United States Navy;Russia;Italy",
+        "column": null,
+        "byline": "By Julian E. Barnes, Michael Forsythe, David D. Kirkpatrick and Jason Horowitz",
+        "type": "Article",
+        "title": "U.S. Officials Say Superyacht Could be Putin’s",
+        "abstract": "They say they have indications that the $700 million, 459-foot yacht, which is in dry dock in Italy, is associated with the Russian president, backing an earlier claim by a former crew member.",
+        "des_facet": [
+            "Russian Invasion of Ukraine (2022)",
+            "Embargoes and Sanctions",
+            "Assets, Frozen",
+            "Boats and Boating",
+            "United States International Relations"
+        ],
+        "org_facet": [
+            "Treasury Department",
+            "United States Navy"
+        ],
+        "per_facet": [
+            "Putin, Vladimir V"
+        ],
+        "geo_facet": [
+            "Russia",
+            "Italy"
+        ],
+        "media": [
+            {
+                "type": "image",
+                "subtype": "photo",
+                "caption": "The Scheherazade dominates the waterfront in the small Italian town of Marina di Carrara where it has been moored since September.",
+                "copyright": "Gaia Pianigiani/The New York Times",
+                "approved_for_syndication": 1,
+                "media-metadata": [
+                    {
+                        "url": "https://static01.nyt.com/images/2022/03/07/multimedia/11dc-intel-yacht/00yacht--Scheherazade-2-thumbStandard.jpg",
+                        "format": "Standard Thumbnail",
+                        "height": 75,
+                        "width": 75
+                    },
+                    {
+                        "url": "https://static01.nyt.com/images/2022/03/07/multimedia/11dc-intel-yacht/00yacht--Scheherazade-2-mediumThreeByTwo210.jpg",
+                        "format": "mediumThreeByTwo210",
+                        "height": 140,
+                        "width": 210
+                    },
+                    {
+                        "url": "https://static01.nyt.com/images/2022/03/07/multimedia/11dc-intel-yacht/00yacht--Scheherazade-2-mediumThreeByTwo440.jpg",
+                        "format": "mediumThreeByTwo440",
+                        "height": 293,
+                        "width": 440
+                    }
+                ]
+            }
+        ],
+        "eta_id": 0
+    },
   ]
 }

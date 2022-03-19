@@ -1,0 +1,46 @@
+{
+  "status": "OK",
+  "copyright": "Copyright (c) 2022 The New York Times Company.  All Rights Reserved.",
+  "num_results": 1,
+  "results": [
+    {
+      "id": 100000008245158,
+      "asset_id": 100000008245158,
+      "source": "New York Times",
+      "published_date": "09-03-2022",
+      "byline": "By Henry Fountain",
+      "type": "Article",
+      "title": "At the Bottom of an Icy Sea, One of History’s Great Wrecks Is Found",
+      "abstract": "Explorers and researchers, battling freezing temperatures, have located Endurance, Ernest Shackleton’s ship that sank in the Antarctic in 1915.",
+      "media": [
+        {
+          "type": "image",
+          "subtype": "photo",
+          "caption": "A view of the wreck of Endurance from a submersible.",
+          "copyright": "Falklands Maritime Heritage Trust ",
+          "approved_for_syndication": 0,
+          "media-metadata": [
+            {
+              "url": "https://static01.nyt.com/images/2022/03/09/world/09cli-shackleton-handout2/09cli-shackleton-handout2-thumbStandard.jpg",
+              "format": "Standard Thumbnail",
+              "height": 75,
+              "width": 75
+            },
+            {
+              "url": "https://static01.nyt.com/images/2022/03/09/world/09cli-shackleton-handout2/09cli-shackleton-handout2-mediumThreeByTwo210.jpg",
+              "format": "mediumThreeByTwo210",
+              "height": 140,
+              "width": 210
+            },
+            {
+              "url": "https://static01.nyt.com/images/2022/03/09/world/09cli-shackleton-handout2/09cli-shackleton-handout2-mediumThreeByTwo440.jpg",
+              "format": "mediumThreeByTwo440",
+              "height": 293,
+              "width": 440
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
