@@ -16,36 +16,43 @@ class URLSessionTests: XCTestCase {
     var urlSession: URLSession!
     
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        // Given
         mockSession =  URLSessionMock()
         urlSession = URLSession.shared
         networkManager = NetworkManager(session: mockSession)
         request = ArticleListRequest(timePeriod: 1)
     }
     
-    func testDataTaskURL() {        
+    func test_DataTaskURL() {
+        // When
         urlSession.dataTask(with: request.urlRequest!) { data, response, error in
+            // Then
             XCTAssertNotNil(response)
         }
     }
     
-    func testRequestBaseURL() {
+    func test_RequestBaseURL() {
         let request = MockNetworkRequest()
         XCTAssertNotNil(request.urlRequest)
     }
     
-    func testSessionRequestData() throws {
+    func test_SessionRequestData() throws {
+        // When
         mockSession.data = Data()
+        
         mockSession.fetchDataTask(with: request.urlRequest!) { data, response, error in
+            //Then
             XCTAssertNotNil(data)
             XCTAssertNil(response)
             XCTAssertNil(error)
         }
     }
     
-    func testSessionRequestError() throws {
+    func test_SessionRequestError() throws {
+        // When
         mockSession.error = NetworkError.noData
         mockSession.fetchDataTask(with: request.urlRequest!) { data, response, error in
+            // Then
             XCTAssertNotNil(error)
         }
     }

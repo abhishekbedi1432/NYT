@@ -16,7 +16,7 @@ class NetworkRequestTests: XCTestCase {
         request = ArticleListRequest(timePeriod: 5)
     }
     
-    func testRequestUrl() throws {
+    func test_RequestUrl() throws {
         
         // Given
         let expectedUrlString = "https://api.nytimes.com/svc/mostpopular/v2/mostviewed/all-sections/5.json?api-key=7AP916lfRg6y1NCiz6kqyqH1v9CIB3ah"
@@ -28,7 +28,7 @@ class NetworkRequestTests: XCTestCase {
         XCTAssertEqual(absoluteString, expectedUrlString)
     }
     
-    func testRequestHeaderParams() throws {
+    func test_RequestHeaderParams() throws {
         // Given
         let expectedHeaderParams = 1
         // When
@@ -37,13 +37,13 @@ class NetworkRequestTests: XCTestCase {
         XCTAssertEqual(requestHeader.count, expectedHeaderParams)
     }
     
-    func testRequestHeadersValues() throws {
+    func test_RequestHeadersValues() throws {
         
         let headerValue = try XCTUnwrap(request.headerParams.first?.value)
         XCTAssertNotNil(headerValue)
     }
     
-    func testRequestAPIKeys() throws {
+    func test_RequestAPIKeys() throws {
         let apiKey = request.apiKey
         XCTAssertEqual(NetworkConstants.apiKey, apiKey)
     }

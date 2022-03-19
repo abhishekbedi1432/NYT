@@ -11,13 +11,6 @@ struct ArticleListScreen: Screen {
 
     let app: XCUIApplication
     
-    private enum Identifiers {
-        static let title = "email"
-        static let password = "password"
-        static let login = "login"
-        static let error = "error"
-    }
-      
     @discardableResult
     func waitForTitleToBeVisible() -> Self {
         XCTAssertTrue(navigationBar.waitForExistence(timeout: Constants.timeout))
