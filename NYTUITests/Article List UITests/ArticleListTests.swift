@@ -24,15 +24,18 @@ class ArticleListTests: UITestCase {
     func test_list_is_scrollable() {
         ArticleListScreen(app: app)
             .waitForTitleToBeVisible()
-            .scrollTheList()
-            .scrollTheList()
+            .scrollUp()
+            .scrollUp()
             .verifyIfArticlesAreLoaded()
     }
     
     func testArticleDetailIsVisible() {
-        ArticleListScreen(app: app)
-            .waitForTitleToBeVisible()
-            .tapOnFirstArticle()
+        let listScreen = ArticleListScreen(app: app)
+        listScreen.waitForTitleToBeVisible()
+        
+        let detailScreen = listScreen.tapOnFirstArticle()
+        detailScreen.scrollUp()
+        detailScreen.verifyIfUIElementsAreVisible()
     }
 
 }

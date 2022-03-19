@@ -16,3 +16,8 @@ extension XCTestCase {
         waitForExpectations(timeout: duration + 0.5)
     }
 }
+
+extension UITestCase {
+    
+    
+}

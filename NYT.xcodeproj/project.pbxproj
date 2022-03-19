@@ -28,6 +28,7 @@
 		3B11739427E6281E0004B00D /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B11739327E6281E0004B00D /* URLSessionMock.swift */; };
 		3B11739627E628460004B00D /* URLSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B11739527E628460004B00D /* URLSessionTests.swift */; };
 		3B11739827E628D90004B00D /* MockNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B11739727E628D90004B00D /* MockNetworkRequest.swift */; };
+		3B11739A27E64A510004B00D /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B11739927E64A510004B00D /* Screen.swift */; };
 		3B53B99927E3BD3A003F2A6E /* NYTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53B99827E3BD3A003F2A6E /* NYTApp.swift */; };
 		3B53B99D27E3BD3D003F2A6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B53B99C27E3BD3D003F2A6E /* Assets.xcassets */; };
 		3B53B9A027E3BD3D003F2A6E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B53B99F27E3BD3D003F2A6E /* Preview Assets.xcassets */; };
@@ -98,6 +99,7 @@
 		3B11739327E6281E0004B00D /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
 		3B11739527E628460004B00D /* URLSessionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionTests.swift; sourceTree = "<group>"; };
 		3B11739727E628D90004B00D /* MockNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkRequest.swift; sourceTree = "<group>"; };
+		3B11739927E64A510004B00D /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		3B53B99527E3BD3A003F2A6E /* NYT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B53B99827E3BD3A003F2A6E /* NYTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTApp.swift; sourceTree = "<group>"; };
 		3B53B99C27E3BD3D003F2A6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -209,21 +211,13 @@
 			path = Responses;
 			sourceTree = "<group>";
 		};
-		3B11738127E6144B0004B00D /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Protocol;
-			sourceTree = "<group>";
-		};
-		3B11738427E619CF0004B00D /* Article List */ = {
+		3B11738427E619CF0004B00D /* Article List UITests */ = {
 			isa = PBXGroup;
 			children = (
 				3B11738227E616F50004B00D /* ArticleListScreen.swift */,
-				3B11738B27E623560004B00D /* ArticleDetailScreen.swift */,
 				3B11737F27E614150004B00D /* ArticleListTests.swift */,
 			);
-			path = "Article List";
+			path = "Article List UITests";
 			sourceTree = "<group>";
 		};
 		3B11738527E619F00004B00D /* Constansts */ = {
@@ -237,9 +231,29 @@
 		3B11738827E6225A0004B00D /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				3B11738527E619F00004B00D /* Constansts */,
+				3B11739927E64A510004B00D /* Screen.swift */,
+				3B11737D27E613B70004B00D /* UITestCase.swift */,
 				3B11738927E6227C0004B00D /* XCTestCase+WaitExtension.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		3B11739B27E64B790004B00D /* Article Details UITests */ = {
+			isa = PBXGroup;
+			children = (
+				3B11738B27E623560004B00D /* ArticleDetailScreen.swift */,
+			);
+			path = "Article Details UITests";
+			sourceTree = "<group>";
+		};
+		3B11739C27E64B940004B00D /* Other Files */ = {
+			isa = PBXGroup;
+			children = (
+				3B53B9B327E3BD3D003F2A6E /* NYTUITests.swift */,
+				3B53B9B527E3BD3D003F2A6E /* NYTUITestsLaunchTests.swift */,
+			);
+			path = "Other Files";
 			sourceTree = "<group>";
 		};
 		3B53B98C27E3BD3A003F2A6E = {
@@ -272,8 +286,8 @@
 				3BA2347527E51EFE00F25454 /* Components */,
 				3B53B9D027E3CA80003F2A6E /* Helpers */,
 				3B53B9CA27E3C32B003F2A6E /* Networking */,
-				3BA2346827E5088E00F25454 /* ArticlePeriod */,
-				3B53B9C227E3BDAF003F2A6E /* ArticleList */,
+				3BA2346827E5088E00F25454 /* Article Period */,
+				3B53B9C227E3BDAF003F2A6E /* Article List */,
 				3B53BA0227E47359003F2A6E /* Article Detail */,
 				3B53B99827E3BD3A003F2A6E /* NYTApp.swift */,
 				3B53B99C27E3BD3D003F2A6E /* Assets.xcassets */,
@@ -306,18 +320,15 @@
 		3B53B9B227E3BD3D003F2A6E /* NYTUITests */ = {
 			isa = PBXGroup;
 			children = (
+				3B11739C27E64B940004B00D /* Other Files */,
 				3B11738827E6225A0004B00D /* Utilities */,
-				3B11738127E6144B0004B00D /* Protocol */,
-				3B53B9B327E3BD3D003F2A6E /* NYTUITests.swift */,
-				3B53B9B527E3BD3D003F2A6E /* NYTUITestsLaunchTests.swift */,
-				3B11737D27E613B70004B00D /* UITestCase.swift */,
-				3B11738527E619F00004B00D /* Constansts */,
-				3B11738427E619CF0004B00D /* Article List */,
+				3B11739B27E64B790004B00D /* Article Details UITests */,
+				3B11738427E619CF0004B00D /* Article List UITests */,
 			);
 			path = NYTUITests;
 			sourceTree = "<group>";
 		};
-		3B53B9C227E3BDAF003F2A6E /* ArticleList */ = {
+		3B53B9C227E3BDAF003F2A6E /* Article List */ = {
 			isa = PBXGroup;
 			children = (
 				3B53B9E727E3D8A7003F2A6E /* Services */,
@@ -325,7 +336,7 @@
 				3B53B9C427E3BDFA003F2A6E /* ViewModel */,
 				3B53B9C527E3BE06003F2A6E /* View */,
 			);
-			path = ArticleList;
+			path = "Article List";
 			sourceTree = "<group>";
 		};
 		3B53B9C327E3BDF1003F2A6E /* Model */ = {
@@ -439,14 +450,14 @@
 			path = Responses;
 			sourceTree = "<group>";
 		};
-		3BA2346827E5088E00F25454 /* ArticlePeriod */ = {
+		3BA2346827E5088E00F25454 /* Article Period */ = {
 			isa = PBXGroup;
 			children = (
 				3BA2346927E5088E00F25454 /* ArticlePeriodRow.swift */,
 				3BA2346A27E5088E00F25454 /* ArticlePeriodView.swift */,
 				3BA2346B27E5088E00F25454 /* ArticlePeriodViewModel.swift */,
 			);
-			path = ArticlePeriod;
+			path = "Article Period";
 			sourceTree = "<group>";
 		};
 		3BA2347527E51EFE00F25454 /* Components */ = {
@@ -651,6 +662,7 @@
 				3B53B9B427E3BD3D003F2A6E /* NYTUITests.swift in Sources */,
 				3B11738C27E623560004B00D /* ArticleDetailScreen.swift in Sources */,
 				3B11737E27E613B80004B00D /* UITestCase.swift in Sources */,
+				3B11739A27E64A510004B00D /* Screen.swift in Sources */,
 				3B11738A27E6227C0004B00D /* XCTestCase+WaitExtension.swift in Sources */,
 				3B11738327E616F50004B00D /* ArticleListScreen.swift in Sources */,
 				3B11738727E619FF0004B00D /* Constants.swift in Sources */,

@@ -7,10 +7,6 @@
 
 import XCTest
 
-protocol Screen {
-    var app: XCUIApplication { get }
-}
-
 struct ArticleListScreen: Screen {
 
     let app: XCUIApplication
@@ -21,7 +17,8 @@ struct ArticleListScreen: Screen {
         static let login = "login"
         static let error = "error"
     }
-        
+      
+    @discardableResult
     func waitForTitleToBeVisible() -> Self {
         XCTAssertTrue(navigationBar.waitForExistence(timeout: Constants.timeout))
         return self
@@ -51,8 +48,10 @@ struct ArticleListScreen: Screen {
         XCTAssertEqual(navigationBar.identifier, text)
         return self
     }
-    
-    private var navigationBar: XCUIElement {
+}
+
+private extension ArticleListScreen {
+    var navigationBar: XCUIElement {
         app.navigationBars.firstMatch
     }
 }
