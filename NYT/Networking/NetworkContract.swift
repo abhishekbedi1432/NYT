@@ -11,17 +11,22 @@ protocol NetworkContract {
     func processRequest<T: Codable>(request: NetworkRequest, type: T.Type, completion: @escaping(Swift.Result<T, Error>) -> Void)
 }
 
-extension URLSession: NetworkContract {
+class NetworkManager: NetworkContract {
     
-    func processRequest<T: Codable>(request: NetworkRequest, type: T.Type, completion: @escaping(Swift.Result<T, Error>) -> Void) {
+    let session: URLSessionBuildable
+    
+    init(session: URLSessionBuildable = URLSession.shared) {
+        self.session = session
+    }
+    
+    func processRequest<T>(request: NetworkRequest, type: T.Type, completion: @escaping (Result<T, Error>) -> Void) where T : Decodable, T : Encodable {
         
         guard let request = request.urlRequest else {
             completion(.failure(URLRequestError.invalidRequest))
             return
         }
         
-        dataTask(with: request) { data, response, error in
-            
+        session.fetchDataTask(with: request) { data, response, error in
             guard let data = data else {
                 completion(Result.failure(NetworkError.invalidData))
                 return
@@ -40,7 +45,6 @@ extension URLSession: NetworkContract {
                 print(error)
                 completion(Result.failure(NetworkError.invalidData))
             }
-        }.resume()
+        }
     }
-
 }
