@@ -8,7 +8,7 @@ import Foundation
 
 protocol ArticlePresentable {
     var headline: String { get }
-    var formattedDate: String { get }
+    var calendarDate: String { get }
     var author: String { get }
     var content: String { get }
     var thumbnailUrl: URL? { get }

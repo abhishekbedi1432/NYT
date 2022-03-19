@@ -23,7 +23,7 @@ class ArticleTests: XCTestCase {
         
         let expectedImageLastPath = "09cli-shackleton-handout2-thumbStandard.jpg"
         let expectedBannerImageLastPath = "09cli-shackleton-handout2-mediumThreeByTwo440.jpg"
-        let expectedDate = "Jan 17, 2022"
+        let expectedDate = "2022-03-17"
         let expectedFormattedDate = "1/17/2022"
 
         // When
@@ -35,7 +35,7 @@ class ArticleTests: XCTestCase {
         XCTAssertEqual(article.content, expectedContent)
         XCTAssertEqual(article.imageUrl?.lastPathComponent, expectedBannerImageLastPath)
         XCTAssertEqual(article.thumbnailUrl?.lastPathComponent, expectedImageLastPath)
-        XCTAssertEqual(article.formattedDate, expectedDate)
+        XCTAssertEqual(article.calendarDate, expectedDate)
         
         let shortDate = try XCTUnwrap(article.date?.formatted())
         
@@ -57,7 +57,7 @@ class ArticleTests: XCTestCase {
         XCTAssertEqual(article.content, emptyString)
         XCTAssertNil(article.imageUrl?.lastPathComponent)
         XCTAssertNil(article.thumbnailUrl?.lastPathComponent)
-        XCTAssertEqual(article.formattedDate, emptyString)
+        XCTAssertEqual(article.calendarDate, emptyString)
     }
     
     func test_articles_sorting_success() throws {
@@ -94,18 +94,6 @@ class ArticleTests: XCTestCase {
         XCTAssertEqual(sortedArticles.first?.author, firstArticleAuthor)
         XCTAssertEqual(sortedArticles.last?.author, secondArticleAuthor)
         
-    }
-
-    func test_article_with_incorrect_published_date() throws {
-        
-        //Given
-        let emptyString = ""
-        
-        //When
-        let article = articleWithIncorrectDateFormat
-        
-        //Then
-        XCTAssertEqual(article?.formattedDate, emptyString)
     }
 }
 

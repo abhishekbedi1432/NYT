@@ -44,27 +44,7 @@ extension Article: ArticlePresentable {
         return URL(string: urlString)
     }
     
-    var formattedDate: String {
-        guard let publishedDate = publishedDate else {
-            return ""
-        }
-        return publishedDate.getFormattedDate() ?? ""
-    }
-}
-
-
-private extension String {
-    
-    func getFormattedDate(currentFormat: String = Constants.serverDateFormat) -> String? {
-        
-        let formatter = DateFormatter()
-        formatter.dateFormat = currentFormat
-
-        if let date = formatter.date(from: self) {
-            formatter.dateStyle = .medium
-            return formatter.string(from: date)
-        }
-        
-        return nil
+    var calendarDate: String {
+        publishedDate ?? ""
     }
 }
