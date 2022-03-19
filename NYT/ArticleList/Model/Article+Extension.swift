@@ -7,6 +7,13 @@
 
 import Foundation
 
+fileprivate extension String {
+    static let thumbnail = "Standard Thumbnail"
+    static let banner = "mediumThreeByTwo440"
+    static let serverFormat = "YYYY-MM-DD"
+    static let userFriendlyFormat = "EEE, MMM d"
+}
+
 extension Article: ArticlePresentable {
 
     var author: String {
@@ -22,7 +29,7 @@ extension Article: ArticlePresentable {
 
     var imageUrl: URL? {
         
-        guard let urlString = media?.first?.mediaMetadata?.first(where: { $0.format == "mediumThreeByTwo440"})?.url else {
+        guard let urlString = media?.first?.mediaMetadata?.first(where: { $0.format == .banner })?.url else {
             return nil
         }
 
@@ -31,7 +38,7 @@ extension Article: ArticlePresentable {
     
     var thumbnailUrl: URL? {
         
-        guard let urlString = media?.first?.mediaMetadata?.first(where: { $0.format == "Standard Thumbnail"})?.url else {
+        guard let urlString = media?.first?.mediaMetadata?.first(where: { $0.format == .thumbnail })?.url else {
             return nil
         }
         
@@ -49,8 +56,8 @@ extension Article: ArticlePresentable {
 
 private extension String {
     
-    func getFormattedDate(currentFormat: String = "YYYY-MM-DD",
-                          expectedFormat: String = "EEE, MMM d") -> String? {
+    func getFormattedDate(currentFormat: String = .serverFormat,
+                          expectedFormat: String = .userFriendlyFormat) -> String? {
         // EEE, MMM d
         let formatter = DateFormatter()
         formatter.dateFormat = currentFormat
