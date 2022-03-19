@@ -1,6 +1,5 @@
 
 
-import UIKit
 import Foundation
 
 enum ArticlePeriodOption: Int, CaseIterable {

@@ -21,9 +21,9 @@ struct ArticlePeriodView<ViewModel>: View where ViewModel: ArticleListContract {
                 ArticlePeriodRow(model: model)
             }
         }
-        .navigationTitle("Select Time Period")
+        .navigationTitle(LocalizedStringKey("select_time_period"))
         .navigationBarItems(trailing:
-                                Button("Done") {
+                                Button(LocalizedStringKey("done")) {
                                     self.presentationMode.wrappedValue.dismiss()
                                 })
         .listStyle(PlainListStyle())

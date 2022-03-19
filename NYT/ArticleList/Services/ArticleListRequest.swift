@@ -21,7 +21,6 @@ class ArticleListRequest: NetworkRequest {
         
         var params:[String: AnyObject] = [:]
         params["api-key"] = NetworkConstants.apiKey as AnyObject
-        //TODO: - Fix !
         return URLRequest(baseURL: URL(string: baseUrl)!,
                           path: "v2/mostviewed/all-sections/\(timePeriod).json",
                           parameters: params)!
