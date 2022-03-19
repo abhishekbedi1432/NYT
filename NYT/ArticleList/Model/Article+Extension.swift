@@ -38,7 +38,7 @@ extension Article: ArticlePresentable {
         return URL(string: urlString)
     }
     
-    var date: String {
+    var formattedDate: String {
         guard let publishedDate = publishedDate else {
             return ""
         }

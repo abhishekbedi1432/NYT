@@ -35,7 +35,7 @@ struct ArticleDetailView_Previews: PreviewProvider {
         
         let viewModel = ArticleDetailViewModel(
             headline: "Headline Headline Headline Headline Headline Headline Headline Headline Headline ",
-            date: "2022-03-18",
+            formattedDate: "2022-03-18",
             author: "Author Author Author Author Author Author",
             content: "Abstract", imageUrl: url)
         ArticleDetailView(viewModel: viewModel)

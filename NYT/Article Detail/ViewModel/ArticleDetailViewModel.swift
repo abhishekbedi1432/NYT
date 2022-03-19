@@ -10,7 +10,7 @@ import Foundation
 struct ArticleDetailViewModel: ArticlePresentable {
     
     var headline: String
-    var date: String
+    var formattedDate: String
     var author: String
     var content: String
     var thumbnailUrl: URL?

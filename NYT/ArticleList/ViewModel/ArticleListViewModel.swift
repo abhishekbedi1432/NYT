@@ -40,9 +40,3 @@ class ArticleListViewModel: ArticleListContract {
 }
 
 
-private extension Array where Element == Article {
-    
-    var sortedByDate: [Article] {
-        return self
-    }
-}

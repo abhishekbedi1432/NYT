@@ -41,7 +41,7 @@ struct ArticleListCell: View {
                     HStack() {
                         Spacer()
                         Image(systemName: "calendar")
-                        Text(article.date)
+                        Text(article.formattedDate)
                             .font(.caption2)
                             .foregroundColor(.gray)
                     }
