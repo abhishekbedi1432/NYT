@@ -10,7 +10,7 @@ import SwiftUI
 struct ArticleListView<ViewModel>: View where ViewModel: ArticleListContract {
     
     // MARK: Constants
-    private let screenTitle = "NY Times Articles"
+    private let screenTitle = LocalizedStringKey("article_screen_title")
     @State private var showModal: Bool = false
     @State var selectedPeriodRange: ArticlePeriodOption = .daily
 
