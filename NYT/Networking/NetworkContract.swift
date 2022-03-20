@@ -7,11 +7,7 @@
 
 import Foundation
 
-protocol NetworkContract {
-    func processRequest<T: Codable>(request: NetworkRequest, type: T.Type, completion: @escaping(Swift.Result<T, Error>) -> Void)
-}
-
-class NetworkManager: NetworkContract {
+class NetworkManager {
     
     let session: URLSessionBuildable
     
