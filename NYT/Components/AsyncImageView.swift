@@ -11,7 +11,6 @@ struct AsyncImageView: View {
     
     // MARK: Properties
     var imageUrl: URL?
-    @State private var frame: CGSize = .zero
     
     var body: some View {
         AsyncImage(url: imageUrl) { phase in
