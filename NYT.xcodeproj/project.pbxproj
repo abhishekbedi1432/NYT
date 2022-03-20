@@ -29,7 +29,6 @@
 		3B11739627E628460004B00D /* URLSessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B11739527E628460004B00D /* URLSessionTests.swift */; };
 		3B11739827E628D90004B00D /* MockNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B11739727E628D90004B00D /* MockNetworkRequest.swift */; };
 		3B11739A27E64A510004B00D /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B11739927E64A510004B00D /* Screen.swift */; };
-		3B1173A227E661520004B00D /* NYT.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3B1173A127E661520004B00D /* NYT.mp4 */; };
 		3B1173A427E661DB0004B00D /* CodeCoverage.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B1173A327E661DB0004B00D /* CodeCoverage.png */; };
 		3B1173A927E670EA0004B00D /* ArticlePeriodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1173A827E670EA0004B00D /* ArticlePeriodModel.swift */; };
 		3B53B99927E3BD3A003F2A6E /* NYTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53B99827E3BD3A003F2A6E /* NYTApp.swift */; };
@@ -105,7 +104,6 @@
 		3B11739927E64A510004B00D /* Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		3B11739F27E65A110004B00D /* ArticleList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ArticleList.png; sourceTree = "<group>"; };
 		3B1173A027E65A110004B00D /* ArticleDetails.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ArticleDetails.png; sourceTree = "<group>"; };
-		3B1173A127E661520004B00D /* NYT.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = NYT.mp4; sourceTree = "<group>"; };
 		3B1173A327E661DB0004B00D /* CodeCoverage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CodeCoverage.png; sourceTree = "<group>"; };
 		3B1173A827E670EA0004B00D /* ArticlePeriodModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlePeriodModel.swift; sourceTree = "<group>"; };
 		3B53B99527E3BD3A003F2A6E /* NYT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYT.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,6 +135,7 @@
 		3B53BA1827E4E5AF003F2A6E /* ArticleListPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListPresentable.swift; sourceTree = "<group>"; };
 		3B53BA1A27E4E90E003F2A6E /* Article+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Article+Extension.swift"; sourceTree = "<group>"; };
 		3B53BA1C27E4EEC3003F2A6E /* NetworkContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkContract.swift; sourceTree = "<group>"; };
+		3B94FE8627E707C900D74B76 /* NYT.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = NYT.gif; sourceTree = "<group>"; };
 		3BA2346927E5088E00F25454 /* ArticlePeriodRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlePeriodRow.swift; sourceTree = "<group>"; };
 		3BA2346A27E5088E00F25454 /* ArticlePeriodView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlePeriodView.swift; sourceTree = "<group>"; };
 		3BA2346B27E5088E00F25454 /* ArticlePeriodViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlePeriodViewModel.swift; sourceTree = "<group>"; };
@@ -268,7 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				3B1173A327E661DB0004B00D /* CodeCoverage.png */,
-				3B1173A127E661520004B00D /* NYT.mp4 */,
+				3B94FE8627E707C900D74B76 /* NYT.gif */,
 				3B11739F27E65A110004B00D /* ArticleList.png */,
 				3B1173A027E65A110004B00D /* ArticleDetails.png */,
 			);
@@ -644,7 +643,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B1173A427E661DB0004B00D /* CodeCoverage.png in Resources */,
-				3B1173A227E661520004B00D /* NYT.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
