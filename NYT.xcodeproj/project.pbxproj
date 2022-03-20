@@ -326,7 +326,6 @@
 			children = (
 				3BA2346F27E5183600F25454 /* Info.plist */,
 				3BA2347527E51EFE00F25454 /* Components */,
-				3B53B9D027E3CA80003F2A6E /* Helpers */,
 				3B53B9CA27E3C32B003F2A6E /* Networking */,
 				3BA2346827E5088E00F25454 /* Article Period */,
 				3B53B9C227E3BDAF003F2A6E /* Article List */,
@@ -420,13 +419,6 @@
 				3B11738D27E625850004B00D /* URLSessionBuildable.swift */,
 			);
 			path = Networking;
-			sourceTree = "<group>";
-		};
-		3B53B9D027E3CA80003F2A6E /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		3B53B9E727E3D8A7003F2A6E /* Services */ = {
