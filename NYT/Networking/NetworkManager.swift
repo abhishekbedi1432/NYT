@@ -7,7 +7,11 @@
 
 import Foundation
 
-class NetworkManager {
+protocol NetworkContract {
+    func processRequest<T: Codable>(request: NetworkRequest, type: T.Type, completion: @escaping (Result<T, Error>) -> Void)
+}
+
+class NetworkManager: NetworkContract {
     
     let session: URLSessionBuildable
     
@@ -15,7 +19,7 @@ class NetworkManager {
         self.session = session
     }
     
-    func processRequest<T>(request: NetworkRequest, type: T.Type, completion: @escaping (Result<T, Error>) -> Void) where T : Decodable, T : Encodable {
+    func processRequest<T: Codable>(request: NetworkRequest, type: T.Type, completion: @escaping (Result<T, Error>) -> Void) {
         
         guard let request = request.urlRequest else {
             completion(.failure(URLRequestError.invalidRequest))

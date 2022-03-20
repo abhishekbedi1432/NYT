@@ -30,16 +30,16 @@ class NetworkRequestTests: XCTestCase {
     
     func test_RequestHeaderParams() throws {
         // Given
-        let expectedHeaderParams = 1
+        let expectedHeaderParams = 0
         // When
         let requestHeader = request.headerParams
         // Then
         XCTAssertEqual(requestHeader.count, expectedHeaderParams)
     }
     
-    func test_RequestHeadersValues() throws {
+    func test_RequestParamsValues() throws {
         
-        let headerValue = try XCTUnwrap(request.headerParams.first?.value)
+        let headerValue = try XCTUnwrap(request.params.first?.value)
         XCTAssertNotNil(headerValue)
     }
     
