@@ -7,6 +7,7 @@ NYT-SwiftUI
 # Media
 <img src="Media/ArticleList.png" />
 <img src="Media/ArticleDetails.png" />
+<img src="Media/NYT.gif" />
 
 ## Build and Runtime Requirements
 + Xcode 13.2 or later
