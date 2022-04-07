@@ -7,44 +7,44 @@
 
 import Foundation
 
-enum ServiceResult<T: Codable> {
-    case success(T)
-    case failure(Error)
-}
-
-enum NetworkError: Error {
-    case serverError(_ error: Error?)
-    case invalidData
-}
-
 protocol NetworkContract {
-    func sendRequest<T: Codable>(request: NetworkRequest, completion: @escaping(Swift.Result<T, Error>) -> Void)
-//    func makeRequest<T: Codable>(request: NetworkRequest, completion: @escaping ((ServiceResult<T>) -> Void))
+    func processRequest<T: Codable>(request: NetworkRequest, type: T.Type, completion: @escaping (Result<T, Error>) -> Void)
 }
 
-
-extension URLSession: NetworkContract {
-    func sendRequest<T: Codable>(request: NetworkRequest, completion: @escaping (Result<T, Error>) -> Void) {
+class NetworkManager: NetworkContract {
+    
+    let session: URLSessionBuildable
+    
+    init(session: URLSessionBuildable = URLSession.shared) {
+        self.session = session
+    }
+    
+    func processRequest<T: Codable>(request: NetworkRequest, type: T.Type, completion: @escaping (Result<T, Error>) -> Void) {
         
-        dataTask(with: request.urlRequest) { data, response, error in
-            if let _error = error {
-                completion(Result.failure(NetworkError.serverError(_error)))
+        guard let request = request.urlRequest else {
+            completion(.failure(URLRequestError.invalidRequest))
+            return
+        }
+        
+        session.fetchDataTask(with: request) { data, response, error in
+            guard let data = data else {
+                completion(Result.failure(NetworkError.invalidData))
                 return
             }
-            do{
-                let response = try JSONDecoder().decode(T.self, from: data!)
-                
-                DispatchQueue.main.async {
-                    completion(Result.success(response))
-                }
-                
+            
+            if let error = error {
+                completion(Result.failure(NetworkError.serverError(error)))
+                return
+            }
+            
+            do {
+                let response = try JSONDecoder().decode(T.self, from: data)
+                completion(Result.success(response))
             }
             catch(let error) {
                 print(error)
-                DispatchQueue.main.async {
-                    completion(Result.failure(NetworkError.invalidData))
-                }
+                completion(Result.failure(NetworkError.invalidData))
             }
-        }.resume()
+        }
     }
 }

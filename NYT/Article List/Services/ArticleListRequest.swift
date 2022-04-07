@@ -18,4 +18,8 @@ class ArticleListRequest: NetworkRequest {
     var requestPath: String {
         "v2/mostviewed/all-sections/\(timePeriod).json"
     }
+    
+    var params: [String : Any] {
+        ["api-key" : apiKey]
+    }
 }

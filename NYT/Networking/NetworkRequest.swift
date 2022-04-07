@@ -7,15 +7,19 @@
 
 import Foundation
 
+typealias Dictionary = [String: String]
+
 protocol NetworkRequest {
     var baseURL: String { get }
     var apiKey: String { get }
     var requestPath: String { get }
-    var headerParams: [String: AnyObject] { get }
+    var headerParams: Dictionary { get }
+    var params: [String: Any] { get }
     var urlRequest: URLRequest? { get }
 }
 
 extension NetworkRequest {
+    
     var baseURL: String {
         return NetworkConstants.baseUrl
     }
@@ -24,27 +28,34 @@ extension NetworkRequest {
         return NetworkConstants.apiKey
     }
     
-    var headerParams: [String: AnyObject] {
-        var params:[String: AnyObject] = [:]
-        params["api-key"] = apiKey as AnyObject
-        return params
+    var headerParams: Dictionary {
+        [:]
+    }
+    
+    var params: [String: Any] {
+        [:]
     }
     
     var urlRequest: URLRequest? {
         
         let urlString  = baseURL +  "/" + requestPath
+        
         guard let url = URL(string: urlString) else {
             return nil
         }
         
         var components = URLComponents(url: url, resolvingAgainstBaseURL: false)
         
-        components?.queryItems = headerParams.map { key, value -> URLQueryItem in
+        components?.queryItems = params.map { key, value -> URLQueryItem in
             URLQueryItem(name: String(key), value: String(describing: value))
         }
         guard let componentsURL = components?.url else {
             return nil
         }
-        return URLRequest(url: componentsURL)
+        
+        var request = URLRequest(url: componentsURL)
+        request.allHTTPHeaderFields = headerParams
+        
+        return request
     }
 }

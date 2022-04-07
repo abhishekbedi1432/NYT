@@ -44,7 +44,6 @@
 		3B53B9E427E3D7B8003F2A6E /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53B9E327E3D7B8003F2A6E /* NetworkConstants.swift */; };
 		3B53B9E927E3D8B5003F2A6E /* ArticleListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53B9E827E3D8B5003F2A6E /* ArticleListRequest.swift */; };
 		3B53B9F627E454E9003F2A6E /* ArticleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53B9F527E454E9003F2A6E /* ArticleListView.swift */; };
-		3B53B9F827E45609003F2A6E /* ViewDidLoadModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53B9F727E45609003F2A6E /* ViewDidLoadModifier.swift */; };
 		3B53B9FA27E45693003F2A6E /* ArticleListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53B9F927E45693003F2A6E /* ArticleListCell.swift */; };
 		3B53B9FC27E45D27003F2A6E /* ArticleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53B9FB27E45D27003F2A6E /* ArticleDetailView.swift */; };
 		3B53B9FE27E466C8003F2A6E /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53B9FD27E466C8003F2A6E /* AsyncImageView.swift */; };
@@ -56,7 +55,7 @@
 		3B53BA1727E4A323003F2A6E /* nyt_error_response.json in Resources */ = {isa = PBXBuildFile; fileRef = 3B53BA1627E4A323003F2A6E /* nyt_error_response.json */; };
 		3B53BA1927E4E5AF003F2A6E /* ArticleListPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53BA1827E4E5AF003F2A6E /* ArticleListPresentable.swift */; };
 		3B53BA1B27E4E90E003F2A6E /* Article+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53BA1A27E4E90E003F2A6E /* Article+Extension.swift */; };
-		3B53BA1D27E4EEC3003F2A6E /* NetworkContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53BA1C27E4EEC3003F2A6E /* NetworkContract.swift */; };
+		3B53BA1D27E4EEC3003F2A6E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B53BA1C27E4EEC3003F2A6E /* NetworkManager.swift */; };
 		3BA2346C27E5088E00F25454 /* ArticlePeriodRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA2346927E5088E00F25454 /* ArticlePeriodRow.swift */; };
 		3BA2346D27E5088E00F25454 /* ArticlePeriodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA2346A27E5088E00F25454 /* ArticlePeriodView.swift */; };
 		3BA2346E27E5088E00F25454 /* ArticlePeriodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA2346B27E5088E00F25454 /* ArticlePeriodViewModel.swift */; };
@@ -122,7 +121,6 @@
 		3B53B9E327E3D7B8003F2A6E /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 		3B53B9E827E3D8B5003F2A6E /* ArticleListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListRequest.swift; sourceTree = "<group>"; };
 		3B53B9F527E454E9003F2A6E /* ArticleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListView.swift; sourceTree = "<group>"; };
-		3B53B9F727E45609003F2A6E /* ViewDidLoadModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDidLoadModifier.swift; sourceTree = "<group>"; };
 		3B53B9F927E45693003F2A6E /* ArticleListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListCell.swift; sourceTree = "<group>"; };
 		3B53B9FB27E45D27003F2A6E /* ArticleDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailView.swift; sourceTree = "<group>"; };
 		3B53B9FD27E466C8003F2A6E /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
@@ -134,7 +132,7 @@
 		3B53BA1627E4A323003F2A6E /* nyt_error_response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = nyt_error_response.json; sourceTree = "<group>"; };
 		3B53BA1827E4E5AF003F2A6E /* ArticleListPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListPresentable.swift; sourceTree = "<group>"; };
 		3B53BA1A27E4E90E003F2A6E /* Article+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Article+Extension.swift"; sourceTree = "<group>"; };
-		3B53BA1C27E4EEC3003F2A6E /* NetworkContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkContract.swift; sourceTree = "<group>"; };
+		3B53BA1C27E4EEC3003F2A6E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		3B94FE8627E707C900D74B76 /* NYT.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = NYT.gif; sourceTree = "<group>"; };
 		3BA2346927E5088E00F25454 /* ArticlePeriodRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlePeriodRow.swift; sourceTree = "<group>"; };
 		3BA2346A27E5088E00F25454 /* ArticlePeriodView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlePeriodView.swift; sourceTree = "<group>"; };
@@ -328,7 +326,6 @@
 			children = (
 				3BA2346F27E5183600F25454 /* Info.plist */,
 				3BA2347527E51EFE00F25454 /* Components */,
-				3B53B9D027E3CA80003F2A6E /* Helpers */,
 				3B53B9CA27E3C32B003F2A6E /* Networking */,
 				3BA2346827E5088E00F25454 /* Article Period */,
 				3B53B9C227E3BDAF003F2A6E /* Article List */,
@@ -416,20 +413,12 @@
 			isa = PBXGroup;
 			children = (
 				3B53B9DF27E3D767003F2A6E /* NetworkError.swift */,
-				3B53BA1C27E4EEC3003F2A6E /* NetworkContract.swift */,
+				3B53BA1C27E4EEC3003F2A6E /* NetworkManager.swift */,
 				3B53B9E127E3D78D003F2A6E /* NetworkRequest.swift */,
 				3B53B9E327E3D7B8003F2A6E /* NetworkConstants.swift */,
 				3B11738D27E625850004B00D /* URLSessionBuildable.swift */,
 			);
 			path = Networking;
-			sourceTree = "<group>";
-		};
-		3B53B9D027E3CA80003F2A6E /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				3B53B9F727E45609003F2A6E /* ViewDidLoadModifier.swift */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		3B53B9E727E3D8A7003F2A6E /* Services */ = {
@@ -656,7 +645,6 @@
 				3B1172EB27E545BE0004B00D /* Article+Date.swift in Sources */,
 				3B1173A927E670EA0004B00D /* ArticlePeriodModel.swift in Sources */,
 				3B53B9FA27E45693003F2A6E /* ArticleListCell.swift in Sources */,
-				3B53B9F827E45609003F2A6E /* ViewDidLoadModifier.swift in Sources */,
 				3B53B9E427E3D7B8003F2A6E /* NetworkConstants.swift in Sources */,
 				3B53B9F627E454E9003F2A6E /* ArticleListView.swift in Sources */,
 				3B53B9E227E3D78D003F2A6E /* NetworkRequest.swift in Sources */,
@@ -670,7 +658,7 @@
 				3BA2346E27E5088E00F25454 /* ArticlePeriodViewModel.swift in Sources */,
 				3B53B9FC27E45D27003F2A6E /* ArticleDetailView.swift in Sources */,
 				3B53B9C927E3C09B003F2A6E /* ArticleListViewModel.swift in Sources */,
-				3B53BA1D27E4EEC3003F2A6E /* NetworkContract.swift in Sources */,
+				3B53BA1D27E4EEC3003F2A6E /* NetworkManager.swift in Sources */,
 				3BA2346C27E5088E00F25454 /* ArticlePeriodRow.swift in Sources */,
 				3B11736727E5B9360004B00D /* PlaceholderView.swift in Sources */,
 				3B53BA1B27E4E90E003F2A6E /* Article+Extension.swift in Sources */,

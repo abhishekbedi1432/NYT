@@ -19,7 +19,7 @@ class ArticleListViewModel: ObservableObject {
     
     @Published var articles: [Article] = []
     @Published private(set) var state = RequestState.idle
-    @State var timePeriod: Int = 1 {
+    var timePeriod: Int = 1 {
         willSet{
             refreshArticles(period: newValue)
         }

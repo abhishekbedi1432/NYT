@@ -11,7 +11,6 @@ struct ArticleListView: View {
     
     //MARK: - Properties
     @ObservedObject var viewModel: ArticleListViewModel
-    @State var selectedPeriodRange: ArticlePeriodOption = .daily
     
     var body: some View {
         switch viewModel.state {
